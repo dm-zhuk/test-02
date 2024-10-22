@@ -1,0 +1,134 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, system-ui, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: #FFFFFF;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-main: #101828;
+  --color-text: #475467;
+  --color-gray: #6C717B;
+  --color-btn: #E44848;
+  --color-btn-hover: #D84343;
+  --color-rate: #FFC531;
+  --color-light-gray: #DADDE1;
+  --color-badge: #F2F4F7;
+  --color-input: #F7F7F7;
+  --color-white: #FFFFFF;
+
+  --shadow-gray: rgba(0, 0, 0, 0.24);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 1440px;
+  min-height: 100vh;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-family: Inter;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 0.67;
+  color: var(--color-main);
+  /* color: var(--color-input); HomePage */
+}
+
+h2 {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  color: var(--color-main);
+  /* color: var(--color-input); HomePage */
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  transform: scale(1.03);
+}
+
+button {
+  border-radius: 200px;
+  background-color: var(--color-btn);
+  color: var(--color-white);
+
+  font-weight: 500;
+  letter-spacing: -0.08px;
+
+  display: flex;
+  width: 166px;
+  padding: 16px 60px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  &:focus,
+  &:focus-visible,
+  &:hover {
+    background-color: var(--color-btn-hover);
+    transform: scale(1.03);
+    transition: border-color 0.25s;
+  }
+}
+
+.loadMore {
+  display: inline-flex;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 200px;
+  border: 1px solid var(--color-light-gray);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+
+  font-weight: 500;
+  letter-spacing: -0.08px;
+
+  &:focus,
+  &:hover {
+    border: 1px solid var(--color-btn-hover);
+    transform: scale(1.03);
+  }
+}
