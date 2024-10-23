@@ -2,16 +2,18 @@ import * as React from "react";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 import Loader from "./common/components/Loader/Loader";
 import SharedLayout from "./common/components/layouts/SharedLayout";
-
-const Catalog = React.lazy(() => import("./pages/Catalog"));
-const Favorites = React.lazy(() => import("./pages/Favorites"));
+import HomePage from "./pages/HomePage/HomePage";
 
 export default function App() {
+  // const HomePage = React.lazy(() => import("./pages/HomePage"));
+  const Catalog = React.lazy(() => import("./pages/Catalog"));
+  const Favorites = React.lazy(() => import("./pages/Favorites"));
+
   return (
     <div>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route index element={<Home />} />
+          <Route index element={<HomePage />} />
           <Route
             path="catalog"
             element={
@@ -22,7 +24,6 @@ export default function App() {
           />
           <Route
             path="favorites"
-            // path="favorites/*"
             element={
               <React.Suspense fallback={<Loader isLoading={true} />}>
                 <Favorites />

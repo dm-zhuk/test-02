@@ -1,5 +1,5 @@
 :root {
-  font-family: -apple-system, BlinkMacSystemFont, Inter, system-ui, Helvetica, Arial, sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 16px;
   font-style: normal;
   line-height: 1.5;
@@ -33,7 +33,6 @@ code {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 1440px;
   min-height: 100vh;
 }
@@ -55,16 +54,14 @@ p {
 }
 
 h1 {
-  font-family: Inter;
-  font-size: 48px;
+  font-size: 48px !important;
   font-weight: 600;
   line-height: 0.67;
-  color: var(--color-main);
-  /* color: var(--color-input); HomePage */
+  margin: 0 !important;
+  color: var(--color-input);
 }
 
 h2 {
-  font-family: Inter;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.33;
@@ -89,6 +86,7 @@ a:hover {
 
 button {
   border-radius: 200px;
+  border: none;
   background-color: var(--color-btn);
   color: var(--color-white);
 
@@ -96,8 +94,8 @@ button {
   letter-spacing: -0.08px;
 
   display: flex;
-  width: 166px;
-  padding: 16px 60px;
+  max-width: 173px;
+  padding: 16px 48px;
   justify-content: center;
   align-items: center;
   gap: 10px;
