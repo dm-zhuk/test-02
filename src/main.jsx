@@ -1,7 +1,5 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
 import { Normalize } from "styled-normalize";
 import { BrowserRouter } from "react-router-dom";
 
