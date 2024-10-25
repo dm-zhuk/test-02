@@ -2,11 +2,22 @@ import {
   AC,
   Alcove,
   Automatic,
+  Close,
+  Favorite,
+  Fridge,
   FullyIntegrated,
+  Gas,
   Kitchen,
+  Location,
+  Logo,
+  Microwave,
+  Petrol,
+  Radio,
   Shower,
+  Star,
   TV,
   Van,
+  Water,
 } from "../common/components/icons/icons";
 
 export const vehicleEquipment = [
@@ -26,3 +37,17 @@ export const vehicleType = [
   },
   { label: "Alcove", icon: <Alcove />, value: "alcove" },
 ];
+
+export const iconsOnCard = {
+  transmission: <Automatic />,
+  engine: <Petrol />,
+  kitchen: <Kitchen />,
+  AC: <AC />,
+  TV: <TV />,
+  radio: <Radio />,
+  water: <Water />,
+  bathroom: <Shower />,
+  microwave: <Microwave />,
+  refrigerator: <Fridge />,
+  gas: <Gas />,
+};
