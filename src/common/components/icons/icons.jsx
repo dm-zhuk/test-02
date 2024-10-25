@@ -1,7 +1,6 @@
 import { ReactComponent as AC } from "./AC.svg";
 import { ReactComponent as Alcove } from "./Alcove.svg";
 import { ReactComponent as Automatic } from "./Automatic.svg";
-import { ReactComponent as Bathroom } from "./Bathroom.svg";
 import { ReactComponent as Close } from "./Close.svg";
 import { ReactComponent as Favorite } from "./Favorite.svg";
 import { ReactComponent as FavoritePressed } from "./FavoritePressed.svg";
@@ -24,7 +23,6 @@ export {
   AC,
   Alcove,
   Automatic,
-  Bathroom,
   Close,
   Favorite,
   FavoritePressed,

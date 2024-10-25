@@ -1,6 +1,6 @@
-import styles from './Checkbox.module.scss';
+import styles from "./index.module.css";
 
-export const Checkbox = ({ name, label, icon }) => {
+const Checkbox = ({ name, label, icon }) => {
   return (
     <div className={styles.checkboxContainer}>
       <input type="checkbox" id={name} name={name} className={styles.hidden} />
@@ -11,3 +11,5 @@ export const Checkbox = ({ name, label, icon }) => {
     </div>
   );
 };
+
+export default Checkbox;

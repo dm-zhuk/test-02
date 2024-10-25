@@ -21,8 +21,12 @@
   --color-badge: #F2F4F7;
   --color-input: #F7F7F7;
   --color-white: #FFFFFF;
+  --color-label: rgba(16, 24, 40, 0.6);
 
+  --color-border: rgba(16, 24, 40, 0.2);
   --shadow-gray: rgba(0, 0, 0, 0.24);
+
+  --trans: 0.3s ease-in-out;
 }
 
 code {
@@ -72,6 +76,17 @@ h2 {
   line-height: 1.33;
   color: var(--color-main);
   /* color: var(--color-input); HomePage */
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-main);
+}
+
+p {
+  color: var(--color-text);
 }
 
 img {

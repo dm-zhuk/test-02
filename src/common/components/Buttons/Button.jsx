@@ -1,15 +1,15 @@
 import PropTypes from "prop-types";
 
-const Button = ({ string, onClick, ...props }) => {
+const Button = ({ text, onClick, ...props }) => {
   return (
     <button onClick={onClick} {...props}>
-      {string}
+      {text}
     </button>
   );
 };
 
 Button.propTypes = {
-  string: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
   onClick: PropTypes.func,
 };
 
