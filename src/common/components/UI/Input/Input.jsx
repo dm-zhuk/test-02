@@ -1,16 +1,16 @@
-import React from 'react';
-import style from './Input.module.scss';
+import React from "react";
+import styles from "./index.module.css";
 
 export const Input = ({
   type,
   name,
-  placeholder = '',
+  placeholder = "",
   pattern,
   onChange,
   error,
 }) => {
   return (
-    <div className={style.wrapper}>
+    <div className={styles.wrapper}>
       <input
         type={type}
         name={name}
@@ -18,7 +18,7 @@ export const Input = ({
         onChange={onChange}
         pattern={pattern}
       />
-      {error && <span className={style.error}>{error}</span>}
+      {error && <span className={styles.error}>{error}</span>}
     </div>
   );
 };

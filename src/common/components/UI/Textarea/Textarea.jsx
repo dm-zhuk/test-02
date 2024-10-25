@@ -1,16 +1,16 @@
-import React from 'react';
-import style from './Textarea.module.scss';
+import React from "react";
+import styles from "./index.module.css";
 
 export const Textarea = ({
   rows,
   name,
-  placeholder = '',
+  placeholder = "",
   pattern,
   onChange,
   error,
 }) => {
   return (
-    <div className={style.wrapper}>
+    <div className={styles.wrapper}>
       <textarea
         rows={rows}
         name={name}
@@ -18,7 +18,7 @@ export const Textarea = ({
         onChange={onChange}
         pattern={pattern}
       />
-      {error && <span className={style.error}>{error}</span>}
+      {error && <span className={styles.error}>{error}</span>}
     </div>
   );
 };

@@ -1,0 +1,22 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  input {
+    margin-bottom: 4px;
+  }
+
+  input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 18px;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .error {
+    color: red;
+    font-size: 12px;
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./index.module.css";
 import CardContent from "./CardContent";
+import styles from "./index.module.css";
 
 const CardCatalog = ({ data, listRef }) => {
   return (
