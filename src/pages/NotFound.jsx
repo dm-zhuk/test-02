@@ -5,10 +5,10 @@ const NotFound = () => {
   return (
     <div>
       <h1>404 Not found</h1>
-      <p>Page does not exist, please modify your search</p>
-      <p>
+      <h2>Page does not exist, please modify your search</h2>
+      <h3>
         <Link to="/">Back to the home page</Link>
-      </p>
+      </h3>
     </div>
   );
 };

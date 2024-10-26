@@ -1,5 +1,5 @@
 export const getFilterParams = (elements) => {
-  const { location, automatic, AC, TV, kitchen, shower, form } = elements;
+  const { location, AC, automatic, kitchen, TV, shower, form } = elements;
 
   const details = {
     AC: AC.checked,

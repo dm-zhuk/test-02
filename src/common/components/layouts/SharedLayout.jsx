@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import styles from "./SharedLayout.module.css";
-import Logo from "../img/Logo.png";
+import { Logo } from "../icons/spriteSvg";
 
 const SharedLayout = () => {
   return (
@@ -9,7 +9,7 @@ const SharedLayout = () => {
       <header className={styles.header}>
         <div className={styles.logo}>
           <NavLink to="/">
-            <img className={styles.logo} src={Logo} alt="logotype" />
+            <Logo />
           </NavLink>
         </div>
         <nav>

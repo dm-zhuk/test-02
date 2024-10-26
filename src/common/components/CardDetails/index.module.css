@@ -8,15 +8,9 @@
 
 .images {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.image {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 4px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
 }
 
 .tabs {
@@ -169,7 +163,9 @@
 
 .image {
   width: 292px;
-  height: 312px;
+  min-height: 312px;
+  flex-shrink: 0;
+  object-fit: cover;
   border-radius: 10px;
 }
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { compileDetails, compileFeatures, formatPrice } from "./helper";
-import { Location, Star } from "../icons/icons";
+import { Location, Star } from "../icons/spriteSvg";
 import { iconsOnCard } from "../../../utils/filterIcons";
 import Booking from "../Booking/Booking";
 import styles from "./index.module.css";

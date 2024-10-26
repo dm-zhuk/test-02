@@ -1,3 +1,3 @@
-export const getAdverts = state => state.data;
+export const getCampers = (state) => state.data;
 
-export const getFavorites = state => state.favorites;
+export const getFavorites = (state) => state.favorites;

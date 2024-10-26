@@ -12,12 +12,6 @@
   box-shadow: 0 2px 4px var(--shadow-gray);
 }
 
-.logo a {
-  width: 136px;
-  height: 16px;
-  flex-shrink: 0;
-}
-
 .navList {
   display: flex;
   font-weight: 500;

@@ -20,11 +20,20 @@
 
 .inputBar {
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   height: 56px;
   width: 100%;
-  padding: 18px 218px 18px 20px;
+  padding: 18px;
   border: none;
   border-radius: 12px;
+  background: var(--color-input);
+}
+
+.cityInput {
+  border: none;
+  line-height: 1.5;
   background: var(--color-input);
 }
 

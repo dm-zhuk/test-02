@@ -4,7 +4,7 @@ import { CardBadge } from "../CardBadge/CardBadge";
 import { CardDetails } from "../CardDetails/CardDetails";
 import { Modal } from "../UI/Modal/Modal";
 import { getFavorites } from "../../../store/selectors";
-import { Favorite, Location, Star } from "../icons/icons";
+import { Favorite, Location, Star } from "../icons/spriteSvg";
 import { toggleFavorites } from "../../../store/favoritesSlice";
 import Button from "../Buttons/Button";
 import styles from "./index.module.css";

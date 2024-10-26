@@ -4,12 +4,10 @@
   font-style: normal;
   line-height: 1.5;
   font-weight: 400;
-  background-color: #FFFFFF;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 
   --color-main: #101828;
   --color-text: #475467;
@@ -128,26 +126,5 @@ button {
     background-color: var(--color-btn-hover);
     transform: scale(1.02);
     transition: border-color 0.25s;
-  }
-}
-
-.loadMore {
-  display: inline-flex;
-  padding: 16px 32px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 200px;
-  border: 1px solid var(--color-light-gray);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-
-  font-weight: 500;
-  letter-spacing: -0.08px;
-
-  &:focus,
-  &:hover {
-    border: 1px solid var(--color-btn-hover);
-    transform: scale(1.03);
   }
 }

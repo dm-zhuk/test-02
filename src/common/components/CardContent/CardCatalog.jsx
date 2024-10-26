@@ -8,9 +8,9 @@ const CardCatalog = ({ data, listRef }) => {
       {data.length > 0 ? (
         data.map((item) => <CardContent item={item} key={item._id} />)
       ) : (
-        <li className={styles.notFound}>
+        <h3 className={styles.notFound}>
           Please review your query and try again.
-        </li>
+        </h3>
       )}
     </ul>
   );

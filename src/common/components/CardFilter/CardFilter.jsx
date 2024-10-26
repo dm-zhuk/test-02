@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import toast from "react-hot-toast";
-import Pagination from "../UI/Pagination";
+import Pagination from "../../../utils/context";
 import Button from "../Buttons/Button";
 import RadioButton from "../Buttons/RadioButton";
 import Checkbox from "../Buttons/Checkbox";
-import { Location } from "../icons/icons";
+import { Map } from "../icons/spriteSvg";
 import { vehicleEquipment, vehicleType } from "../../../utils/filterIcons";
 import { getFilterParams } from "../../../utils/filterParams";
 import { filterData } from "../../../utils/filterData";
@@ -36,8 +36,9 @@ const CardFilter = ({ cards, setFilteredCards }) => {
             Location
           </label>
           <div className={styles.inputBar}>
-            <Location className={styles.locationIcon} />
+            <Map className={styles.locationIcon} />
             <input
+              className={styles.cityInput}
               type="text"
               id="location"
               autoComplete="off"

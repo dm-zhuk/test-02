@@ -5,10 +5,10 @@ import {
   useImperativeHandle,
   useRef,
   useState,
-} from 'react';
-import { createPortal } from 'react-dom';
-import styles from './Modal.module.scss';
-import { Close } from 'components/Icons';
+} from "react";
+import { createPortal } from "react-dom";
+import { Close } from "../../icons/spriteSvg";
+import styles from "./index.module.css";
 
 export const Modal = forwardRef(function Modal({ children }, ref) {
   const modalRef = useRef();
@@ -17,23 +17,23 @@ export const Modal = forwardRef(function Modal({ children }, ref) {
   useImperativeHandle(ref, () => ({
     open() {
       setIsModal(true);
-      document.addEventListener('keydown', handleKeyDown);
+      document.addEventListener("keydown", handleKeyDown);
     },
     close() {
       setIsModal(false);
-      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener("keydown", handleKeyDown);
     },
   }));
 
-  const handleOverlayClick = e => {
+  const handleOverlayClick = (e) => {
     if (e.target === modalRef.current) {
       ref.current.close();
     }
   };
 
   const handleKeyDown = useCallback(
-    e => {
-      if (e.key === 'Escape') {
+    (e) => {
+      if (e.key === "Escape") {
         ref.current.close();
       }
     },
@@ -46,7 +46,7 @@ export const Modal = forwardRef(function Modal({ children }, ref) {
 
   useEffect(() => {
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener("keydown", handleKeyDown);
     };
   }, [handleKeyDown]);
 
@@ -56,8 +56,7 @@ export const Modal = forwardRef(function Modal({ children }, ref) {
         <div
           ref={modalRef}
           className={styles.modalOverlay}
-          onClick={handleOverlayClick}
-        >
+          onClick={handleOverlayClick}>
           <div className={styles.modalContent}>
             <button className={styles.button} onClick={handleClose}>
               <Close />
@@ -67,6 +66,6 @@ export const Modal = forwardRef(function Modal({ children }, ref) {
         </div>
       )}
     </>,
-    document.getElementById('modal-root')
+    document.getElementById("modal-root")
   );
 });

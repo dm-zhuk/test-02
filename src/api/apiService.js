@@ -29,7 +29,7 @@ export const fetchApi = {
     const url = `${BASE_URL}/?${params}`;
     return await fetchData(url);
   },
-  async createContact(dataBody) {
+  async createData(dataBody) {
     const method = "POST";
     const url = `${BASE_URL}`;
     const body = JSON.stringify(dataBody);
