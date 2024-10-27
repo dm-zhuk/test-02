@@ -51,17 +51,13 @@ const CardFilter = ({ cards, setFilteredCards }) => {
             <p>Filters</p>
           </div>
           <div className={styles.checkBoxContainer}>
-            <div className="bottomLine">
-              <h3>Vehicle equipment</h3>
-            </div>
+            <h3>Vehicle equipment</h3>
             <div className={styles.btnsWrapper}>
               {vehicleEquipment.map(({ name, label, icon }) => (
                 <Checkbox key={label} name={name} label={label} icon={icon} />
               ))}
             </div>
-            <div className="bottomLine">
-              <h3>Vehicle Type</h3>
-            </div>
+            <h3>Vehicle Type</h3>
             <div className={styles.btnsWrapper}>
               {vehicleType.map(({ value, label, icon }) => (
                 <RadioButton
