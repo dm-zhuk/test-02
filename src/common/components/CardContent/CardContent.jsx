@@ -1,11 +1,12 @@
 import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CardBadge } from "../CardBadge/CardBadge";
-import { CardDetails } from "../CardDetails/CardDetails";
-import { Modal } from "../UI/Modal/Modal";
+// import { CardDetails } from "../CardDetails/CardDetails";
+// import { Modal } from "../UI/Modal/Modal";
 import { getFavorites } from "../../../store/selectors";
 import { Star, Location, Favorite } from "../icons/spriteSvg";
 import { toggleFavorites } from "../../../store/favoritesSlice";
+import { formatPrice } from "../CardDetails/helper";
 import Button from "../Buttons/Button";
 import styles from "./index.module.css";
 
@@ -27,34 +28,27 @@ const CardContent = ({ item }) => {
 
   return (
     <li key={item._id} className={styles.itemWrapper}>
-      <Modal ref={modalRef}>
+      {/* <Modal ref={modalRef}>
         <CardDetails
           card={card}
           isDescription={isDescription}
           setIsDescription={setIsDescription}
         />
-      </Modal>
+      </Modal> */}
       <div className={styles.img}>
-        <img src={item.gallery[0]} alt="" />
+        <img src={item.gallery[0].thumb} alt="" />
       </div>
 
       <div className={styles.itemContent}>
         <div className={styles.itemTitle}>
           <h2>{item.name}</h2>
           <span {...item.price} className={styles.h2}>
-            {formatPrice(card.price)}
+            {formatPrice(item.price)}
             <Favorite
               className={isFavorite ? styles.active : ""}
               onClick={handleFavorites}
             />
           </span>
-          {/* <p>
-            €{item.price}
-            <Favorite
-              className={isFavorite ? styles.active : ""}
-              onClick={handleFavorites}
-            />
-          </p> */}
         </div>
 
         <div className={styles.itemSubtitle}>
@@ -67,9 +61,10 @@ const CardContent = ({ item }) => {
         </div>
         <p>{item.description}</p>
         <ul className={styles.detailList}>
-          {Object.entries(item.details).map((detail, index) => (
-            <CardBadge detail={detail} key={index} />
-          ))}
+          {item.details &&
+            Object.entries(item.details).map((detail, index) => (
+              <CardBadge detail={detail} key={index} />
+            ))}
         </ul>
         <Button text="Show more" onClick={() => handleShowMore(item)} />
       </div>

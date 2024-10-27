@@ -36,10 +36,7 @@ const CatalogPage = () => {
       {!isLoading && !error && (
         <div className={styles.pageContainer}>
           <div className={styles.contentWrapper}>
-            <CardFilter
-              campers={campers}
-              setFilteredCampers={setFilteredCampers}
-            />
+            <CardFilter cards={campers} setFilteredCards={setFilteredCampers} />
             <CardCatalog data={cards} listRef={listRef} />
           </div>
           {isVisible && (

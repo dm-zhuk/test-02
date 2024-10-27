@@ -26,7 +26,7 @@ const dataSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchData.fulfilled, (state, action) => {
-        state.campers = action.payload;
+        state.campers = action.payload.items;
       })
       .addMatcher((action) => action.type.endsWith("/pending"), handlePending)
       .addMatcher((action) => action.type.endsWith("/rejected"), handleRejected)

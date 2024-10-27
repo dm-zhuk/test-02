@@ -45,7 +45,6 @@ body {
   display: flex;
   max-width: 1440px;
   height: 100vh;
-  overflow: hidden;
 }
 
 ul,
@@ -119,7 +118,7 @@ button {
 
   display: flex;
   max-width: 173px;
-  padding: 16px 48px;
+  padding: 16px 42px;
   justify-content: center;
   align-items: center;
   cursor: pointer;

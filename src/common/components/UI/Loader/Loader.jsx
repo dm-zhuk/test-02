@@ -1,8 +1,11 @@
-import React from 'react';
-import { Grid } from 'react-loader-spinner';
-import { LoaderContainer } from './index';
+import React from "react";
+import { Grid } from "react-loader-spinner";
+import { LoaderContainer } from "./index";
 
-const Loader = () => {
+const Loader = ({ isLoading = false }) => {
+  if (!isLoading) {
+    return null;
+  }
   return (
     <LoaderContainer>
       <Grid
