@@ -4,7 +4,7 @@ import { CardBadge } from "../CardBadge/CardBadge";
 import { CardDetails } from "../CardDetails/CardDetails";
 import { Modal } from "../UI/Modal/Modal";
 import { getFavorites } from "../../../store/selectors";
-import { Favorite, Location, Star } from "../icons/spriteSvg";
+import { Star, Location, Favorite } from "../icons/spriteSvg";
 import { toggleFavorites } from "../../../store/favoritesSlice";
 import Button from "../Buttons/Button";
 import styles from "./index.module.css";
@@ -13,7 +13,7 @@ const CardContent = ({ item }) => {
   const favorites = useSelector(getFavorites);
   const dispatch = useDispatch();
   const handleFavorites = () => dispatch(toggleFavorites(item));
-  const isFavorite = favorites.find((el) => el._id === item._id);
+  const isFavorite = favorites.find((element) => element._id === item._id);
 
   const [card, setCard] = useState();
   const [isDescription, setIsDescription] = useState(true);
@@ -39,18 +39,25 @@ const CardContent = ({ item }) => {
       </div>
 
       <div className={styles.itemContent}>
-        <div className={styles.firstLine}>
-          <p>{item.name}</p>
-          <p>
+        <div className={styles.itemTitle}>
+          <h2>{item.name}</h2>
+          <span {...item.price} className={styles.h2}>
+            {formatPrice(card.price)}
+            <Favorite
+              className={isFavorite ? styles.active : ""}
+              onClick={handleFavorites}
+            />
+          </span>
+          {/* <p>
             €{item.price}
             <Favorite
               className={isFavorite ? styles.active : ""}
               onClick={handleFavorites}
             />
-          </p>
+          </p> */}
         </div>
 
-        <div className={styles.secondLine}>
+        <div className={styles.itemSubtitle}>
           <Star />
           {item.rating}
           <span> ({`${item.reviews?.length}`} Reviews)</span>

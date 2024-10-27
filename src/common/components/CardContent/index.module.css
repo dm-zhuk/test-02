@@ -29,27 +29,24 @@
     gap: 8px;
 }
 
-.firstLine {
+.itemTitle {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 12px;
 }
 
-.firstLine p {
+.itemTitle h2 {
     display: flex;
     align-items: center;
-    margin: 0;
-    font-size: 24px;
-    font-weight: 600;
 }
 
-.firstLine p svg {
+.itemTitle span svg {
     margin-left: 12px;
     cursor: pointer;
 }
 
-.firstLine .active {
+.itemTitle .active {
     fill: var(--color-btn);
 
     path {
@@ -57,18 +54,18 @@
     }
 }
 
-.secondLine {
+.itemSubtitle {
     display: flex;
     flex-direction: row;
 }
 
-.secondLine .location {
+.itemSubtitle .location {
     display: flex;
     align-items: center;
     margin-left: 16px;
 }
 
-.secondLine .location svg {
+.itemSubtitle .location svg {
     width: 16px;
     height: 16px;
     margin-right: 4px;

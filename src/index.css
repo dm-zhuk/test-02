@@ -1,5 +1,6 @@
 #root {
   width: 1440px;
+  margin: 0;
 }
 
 :root {
@@ -41,7 +42,6 @@ code {
 }
 
 body {
-  margin: 0;
   display: flex;
   max-width: 1440px;
   height: 100vh;

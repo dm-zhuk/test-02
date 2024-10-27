@@ -4,10 +4,10 @@ import Pagination from "../../../utils/context";
 import Button from "../Buttons/Button";
 import RadioButton from "../Buttons/RadioButton";
 import Checkbox from "../Buttons/Checkbox";
-import { Map } from "../icons/spriteSvg";
-import { vehicleEquipment, vehicleType } from "../../../utils/filterIcons";
-import { getFilterParams } from "../../../utils/filterParams";
 import { filterData } from "../../../utils/filterData";
+import { getFilterParams } from "../../../utils/filterParams";
+import { vehicleEquipment, vehicleType } from "../../../utils/filterIcons";
+import { Map } from "../icons/spriteSvg";
 import styles from "./index.module.css";
 
 const CardFilter = ({ cards, setFilteredCards }) => {
@@ -20,7 +20,7 @@ const CardFilter = ({ cards, setFilteredCards }) => {
     resetPage();
 
     setFilteredCards(filteredData);
-    toast.success("Your selection applied ✔︎");
+    toast.success("✔︎ Your selection applied");
     resetFilterParams(e.target);
   };
 
@@ -51,13 +51,13 @@ const CardFilter = ({ cards, setFilteredCards }) => {
             <p>Filters</p>
           </div>
           <div className={styles.checkBoxContainer}>
-            <h3>Vehicle equipment</h3>
+            <h3 className={styles.h3Filter}>Vehicle equipment</h3>
             <div className={styles.btnsWrapper}>
               {vehicleEquipment.map(({ name, label, icon }) => (
                 <Checkbox key={label} name={name} label={label} icon={icon} />
               ))}
             </div>
-            <h3>Vehicle Type</h3>
+            <h3 className={styles.h3Filter}>Vehicle Type</h3>
             <div className={styles.btnsWrapper}>
               {vehicleType.map(({ value, label, icon }) => (
                 <RadioButton

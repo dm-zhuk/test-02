@@ -6,7 +6,7 @@
     gap: 64px;
 }
 
-.catalogWrapper {
+.contentWrapper {
     display: flex;
     flex-direction: row;
     gap: 40px;

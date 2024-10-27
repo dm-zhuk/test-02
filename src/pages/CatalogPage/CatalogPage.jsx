@@ -8,7 +8,6 @@ import { scrollTo } from "../../utils/scroller";
 import ErrorHandle from "../../utils/error";
 import Pagination from "../../utils/context";
 import { pagination } from "../../utils/pagination";
-import Loader from "../../common/components/UI/Loader/Loader";
 import Button from "../../common/components/Buttons/Button";
 import styles from "./index.module.css";
 
@@ -36,7 +35,7 @@ const CatalogPage = () => {
     <>
       {!isLoading && !error && (
         <div className={styles.pageContainer}>
-          <div className={styles.catalogWrapper}>
+          <div className={styles.contentWrapper}>
             <CardFilter
               campers={campers}
               setFilteredCampers={setFilteredCampers}
@@ -53,7 +52,6 @@ const CatalogPage = () => {
         </div>
       )}
       <ErrorHandle error={error} />
-      <Loader isLoading={isLoading} />
     </>
   );
 };
