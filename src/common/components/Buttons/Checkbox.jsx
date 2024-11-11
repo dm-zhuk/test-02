@@ -1,11 +1,23 @@
+import React from "react";
 import styles from "./index.module.css";
 
-const Checkbox = ({ name, label, icon }) => {
+const Checkbox = ({ name, label, icon, iconSize = 32, checked, onChange }) => {
   return (
     <div className={styles.checkboxContainer}>
-      <input type="checkbox" id={name} name={name} className={styles.hidden} />
+      <input
+        type="checkbox"
+        id={name}
+        name={name}
+        className={styles.hidden}
+        checked={checked}
+        onChange={onChange}
+      />
       <label htmlFor={name} className={styles.label}>
-        {icon}
+        <span
+          className={styles.icon}
+          style={{ width: iconSize, height: iconSize }}>
+          {React.cloneElement(icon, { width: iconSize, height: iconSize })}
+        </span>
         {label}
       </label>
     </div>

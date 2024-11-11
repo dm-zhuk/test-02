@@ -111,6 +111,7 @@
   width: 16px;
   height: 16px;
   fill: transparent;
+  object-fit: contain;
   stroke: var(--color-main);
 }
 

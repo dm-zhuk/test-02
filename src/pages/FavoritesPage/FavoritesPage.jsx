@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { getFavorites } from "../../store/selectors";
-import { CardFilter } from "../../common/components/CardFilter/CardFilter";
+import CardFilter from "../../common/components/CardFilter/CardFilter";
 import CardCatalog from "../../common/components/CardContent/CardCatalog";
 import styles from "./index.module.css";
 

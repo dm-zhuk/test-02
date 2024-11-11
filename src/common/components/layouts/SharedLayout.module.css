@@ -12,6 +12,10 @@
   box-shadow: 0 2px 4px var(--shadow-gray);
 }
 
+.header>svg {
+  flex-shrink: 0;
+}
+
 .navList {
   display: flex;
   font-weight: 500;

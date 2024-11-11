@@ -4,6 +4,7 @@ import {
   AC,
   Alcove,
   Automatic,
+  Bathroom,
   Fridge,
   FullyIntegrated,
   Gas,
@@ -11,18 +12,17 @@ import {
   Microwave,
   Petrol,
   Radio,
-  Shower,
   TV,
   Van,
   Water,
-} from "../common/components/icons/spriteSvg";
+} from "../common/components/icons";
 
 export const vehicleEquipment = [
   { name: "AC", label: "AC", icon: <AC /> },
-  { name: "automatic", label: "Automatic", icon: <Automatic /> },
+  { name: "transmission", label: "Automatic", icon: <Automatic /> },
   { name: "kitchen", label: "Kitchen", icon: <Kitchen /> },
   { name: "TV", label: "TV", icon: <TV /> },
-  { name: "bathroom", label: "Bathroom", icon: <Shower /> },
+  { name: "bathroom", label: "Bathroom", icon: <Bathroom /> },
 ];
 
 export const vehicleType = [
@@ -35,16 +35,27 @@ export const vehicleType = [
   { label: "Alcove", icon: <Alcove />, value: "alcove" },
 ];
 
-export const iconsOnCard = {
-  transmission: <Automatic />,
-  engine: <Petrol />,
-  kitchen: <Kitchen />,
-  AC: <AC />,
-  TV: <TV />,
-  radio: <Radio />,
-  water: <Water />,
-  bathroom: <Shower />,
-  microwave: <Microwave />,
-  refrigerator: <Fridge />,
-  gas: <Gas />,
-};
+export const badgeIcons = [
+  { name: "transmission", label: "Automatic", icon: <Automatic /> },
+  { name: "engine", label: "Petrol", icon: <Petrol /> },
+  { name: "kitchen", label: "Kitchen", icon: <Kitchen /> },
+  { name: "AC", label: "AC", icon: <AC /> },
+  { name: "bathroom", label: "Bathroom", icon: <Bathroom /> },
+  { name: "water", label: "Water", icon: <Water /> },
+  { name: "TV", label: "TV", icon: <TV /> },
+  { name: "radio", label: "Radio", icon: <Radio /> },
+];
+
+export const totalIcons = [
+  { name: "transmission", label: "Automatic", icon: <Automatic /> },
+  { name: "engine", label: "Petrol", icon: <Petrol /> },
+  { name: "kitchen", label: "Kitchen", icon: <Kitchen /> },
+  { name: "AC", label: "AC", icon: <AC /> },
+  { name: "bathroom", label: "Bathroom", icon: <Bathroom /> },
+  { name: "refrigerator", label: "Fridge", icon: <Fridge /> },
+  { name: "microwave", label: "Microwave", icon: <Microwave /> },
+  { name: "gas", label: "Gas", icon: <Gas /> },
+  { name: "water", label: "Water", icon: <Water /> },
+  { name: "TV", label: "TV", icon: <TV /> },
+  { name: "radio", label: "Radio", icon: <Radio /> },
+];

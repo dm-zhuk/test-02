@@ -1,14 +1,18 @@
 import React from "react";
-import { iconsOnCard } from "../../../utils/filterIcons";
 import styles from "./index.module.css";
+import { badgeIcons } from "../../../utils/filterIcons";
 
 export const CardBadge = ({ detail }) => {
-  const [name, value] = detail;
+  const [key, value] = Array.isArray(detail) ? detail : ["", ""];
+
+  const badge = badgeIcons.find((item) => item.name === key);
+
+  if (!badge || !value) return null;
+
   return (
     <li className={styles.cardBadge}>
-      <span className={styles.icon}>{iconsOnCard[name]}</span>
-      <span className={styles.value}>{value}</span>
-      {name}
+      <span className={styles.icon}>{badge.icon}</span>
+      <span className={styles.value}>{badge.label}</span>
     </li>
   );
 };

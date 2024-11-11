@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../common/components/Buttons/Button";
 import styles from "./index.module.css";
 // test
-import { TestComponent } from "./test";
+// import { TestComponent } from "./test";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const HomePage = () => {
             navigate("catalog");
           }}
         />
-        <TestComponent />
+        {/* <TestComponent /> */}
       </section>
     </main>
   );

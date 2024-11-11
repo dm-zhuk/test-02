@@ -1,8 +1,8 @@
-import { combineReducers } from '@reduxjs/toolkit';
-import { dataReducer } from './dataSlice';
-import { favoritesReducer } from './favoritesSlice';
+import { combineReducers } from "@reduxjs/toolkit";
+import { favoritesReducer } from "./favoritesSlice";
+import { dataReducer } from "./dataSlice";
 
 export const rootReducer = combineReducers({
-  data: dataReducer,
   favorites: favoritesReducer,
+  data: dataReducer,
 });

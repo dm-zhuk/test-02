@@ -1,19 +1,19 @@
-export const filterData = (data, filterParams) => {
-  return data.filter(item => {
+export const filterData = (cards, filterParams) => {
+  return cards.filter((card) => {
     if (
       filterParams.location &&
-      !item.location.toLowerCase().includes(filterParams.location.toLowerCase())
+      !card.location.toLowerCase().includes(filterParams.location.toLowerCase())
     ) {
       return false;
     }
 
-    if (filterParams.form && item.form !== filterParams.form) {
+    if (filterParams.form && card.form !== filterParams.form) {
       return false;
     }
 
-    if (filterParams.details && filterParams.details.length > 0) {
-      for (let detail of filterParams.details) {
-        if (!item.details[detail]) {
+    if (filterParams.details) {
+      for (const detail of filterParams.details) {
+        if (!card[detail]) {
           return false;
         }
       }

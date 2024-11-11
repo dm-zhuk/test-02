@@ -9,7 +9,7 @@ function Fallback({ error, resetErrorBoundary }) {
       <ErrorIcon className={css.imgFB} />
       <h1 className={css.h1FB}> Oops, something went wrong!</h1>
       <p className={css.pFB}></p>
-      <button onClick={resetErrorBoundary} className={css.btnFB}>
+      <button onClick={resetErrorBoundary} style={{ alignContent: "center" }}>
         Try again
       </button>
     </div>

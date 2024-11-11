@@ -7,7 +7,7 @@ import Checkbox from "../Buttons/Checkbox";
 import { filterData } from "../../../utils/filterData";
 import { getFilterParams } from "../../../utils/filterParams";
 import { vehicleEquipment, vehicleType } from "../../../utils/filterIcons";
-import { Map } from "../icons/spriteSvg";
+import { Location } from "../icons";
 import styles from "./index.module.css";
 
 const CardFilter = ({ cards, setFilteredCards }) => {
@@ -36,7 +36,7 @@ const CardFilter = ({ cards, setFilteredCards }) => {
             Location
           </label>
           <div className={styles.inputBar}>
-            <Map className={styles.locationIcon} />
+            <Location className={styles.locationIcon} />
             <input
               className={styles.cityInput}
               type="text"

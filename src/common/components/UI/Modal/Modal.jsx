@@ -7,7 +7,7 @@ import {
   useState,
 } from "react";
 import { createPortal } from "react-dom";
-import { Close } from "../../icons/spriteSvg";
+import { Close } from "../../icons";
 import styles from "./index.module.css";
 
 export const Modal = forwardRef(function Modal({ children }, ref) {

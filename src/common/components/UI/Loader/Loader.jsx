@@ -1,13 +1,13 @@
 import React from "react";
 import { Grid } from "react-loader-spinner";
-import { LoaderContainer } from "./index";
+import styles from "./index.module.css";
 
 const Loader = ({ isLoading = false }) => {
   if (!isLoading) {
     return null;
   }
   return (
-    <LoaderContainer>
+    <div className={styles.loaderContainer}>
       <Grid
         visible={true}
         height={80}
@@ -18,7 +18,7 @@ const Loader = ({ isLoading = false }) => {
         wrapperStyle={{}}
         wrapperClassName="loader"
       />
-    </LoaderContainer>
+    </div>
   );
 };
 

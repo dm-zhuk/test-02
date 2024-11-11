@@ -1,17 +1,15 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import styles from "./SharedLayout.module.css";
-import { Logo } from "../icons/spriteSvg";
+import { Logo } from "../icons";
 
 const SharedLayout = () => {
   return (
     <>
       <header className={styles.header}>
-        <div className={styles.logo}>
-          <NavLink to="/">
-            <Logo />
-          </NavLink>
-        </div>
+        <NavLink to="/">
+          <Logo />
+        </NavLink>
         <nav>
           <ul className={styles.navList}>
             <li>

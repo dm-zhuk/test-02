@@ -1,28 +1,41 @@
+import toast from "react-hot-toast";
+
 export const getFilterParams = (elements) => {
-  const { location, AC, automatic, kitchen, TV, shower, form } = elements;
+  const { location, AC, automatic, kitchen, TV, bathroom, form } = elements;
 
   const details = {
-    AC: AC.checked,
-    automatic: automatic.checked,
-    kitchen: kitchen.checked,
-    TV: TV.checked,
-    bathroom: shower.checked,
+    transmission: automatic ? automatic.checked : false,
+    AC: AC ? AC.checked : false,
+    kitchen: kitchen ? kitchen.checked : false,
+    TV: TV ? TV.checked : false,
+    bathroom: bathroom ? bathroom.checked : false,
   };
 
   const filterParams = {};
-  if (location.value) {
+
+  if (location && location.value) {
     filterParams.location = location.value;
   }
 
-  if (form.value) {
+  if (form && form.value) {
     filterParams.form = form.value;
   }
-  const detailsArr = Object.keys(details).filter(
-    (key) => details[key] === true
-  );
+
+  const detailsArr = Object.keys(details).filter((key) => details[key]);
   if (detailsArr.length > 0) {
     filterParams.details = detailsArr;
   }
 
   return filterParams;
+};
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const filterParams = getFilterParams(e.target);
+
+  let filteredData = filterData(cards, filterParams);
+
+  setFilteredCards(filteredData);
+  toast.success("✔︎ Your selection applied");
 };
