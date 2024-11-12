@@ -2,21 +2,15 @@ import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import Loader from "./common/components/UI/Loader/Loader";
+import ErrorFallback from "./utils/Fallback";
 import NotFound from "./pages/NotFound";
 import SharedLayout from "./common/components/layouts/SharedLayout";
 import { ErrorBoundary } from "react-error-boundary";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage"));
+const DetailsPage = lazy(() => import("./pages/DetailsPage/DetailsPage"));
 const FavoritesPage = lazy(() => import("./pages/FavoritesPage/FavoritesPage"));
-
-const ErrorFallback = ({ error, resetErrorBoundary }) => (
-  <div role="alert">
-    <p>Something went wrong:</p>
-    <pre>{error.message}</pre>
-    <button onClick={resetErrorBoundary}>Try again</button>
-  </div>
-);
 
 export const App = () => {
   return (
@@ -30,6 +24,14 @@ export const App = () => {
             element={
               <ErrorBoundary FallbackComponent={ErrorFallback}>
                 <CatalogPage />
+              </ErrorBoundary>
+            }
+          />
+          <Route
+            path="/details/:id"
+            element={
+              <ErrorBoundary FallbackComponent={ErrorFallback}>
+                <DetailsPage />
               </ErrorBoundary>
             }
           />

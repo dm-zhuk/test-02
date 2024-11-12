@@ -9,7 +9,7 @@ const CardCatalog = ({ data, listRef }) => {
         data.map((item) => <CardContent item={item} key={item.id} />)
       ) : (
         <div className={styles.notFound}>
-          Please review your query and try again.
+          Please review your query and try again!
         </div>
       )}
     </ul>

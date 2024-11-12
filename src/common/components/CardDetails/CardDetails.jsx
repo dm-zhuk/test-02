@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { compileDetails, compileFeatures, formatPrice } from "./helper";
 import { Star, Location } from "../icons";
-import { badgeIcons } from "../../../utils/filterIcons";
+import { featureIcons } from "../../../utils/filterIcons";
 import Booking from "../Booking/Booking";
 import styles from "./index.module.css";
 
@@ -84,7 +84,7 @@ export const CardDetails = ({ card, isDescription, setIsDescription }) => {
                 {cardFeatures &&
                   cardFeatures.map((feature) => (
                     <li key={feature.name} className={styles.featuresItem}>
-                      {badgeIcons[feature.name]}
+                      {featureIcons[feature.name]}
                       <span>{feature.value}</span>
                       <span>{feature.name}</span>
                     </li>

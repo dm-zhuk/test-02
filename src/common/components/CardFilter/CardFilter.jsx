@@ -20,7 +20,16 @@ const CardFilter = ({ cards, setFilteredCards }) => {
     resetPage();
 
     setFilteredCards(filteredData);
-    toast.success("✔︎ Your selection applied");
+
+    const matchesCount = filteredData.length;
+    if (matchesCount > 0) {
+      toast.success(
+        `${matchesCount} match${matchesCount > 1 ? "es" : ""} found for your selection`
+      );
+    } else {
+      toast.error("No matches for your selection");
+    }
+
     resetFilterParams(e.target);
   };
 

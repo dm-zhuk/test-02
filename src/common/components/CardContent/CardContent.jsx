@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { CardBadge } from "../CardBadge/CardBadge";
 import { Star, Location } from "../icons";
 import FavoriteIcon from "../../../utils/FavoriteIcon";
@@ -7,10 +8,9 @@ import Button from "../Buttons/Button";
 import styles from "./index.module.css";
 
 const CardContent = ({ item }) => {
-  const handleShowMore = () => {
-    item.id.open();
-    setIsDescription(false);
-    setCard(item);
+  const navigate = useNavigate();
+  const handleShowMore = (id) => {
+    navigate(`/details/${id}`);
   };
 
   return (
@@ -44,7 +44,7 @@ const CardContent = ({ item }) => {
             <CardBadge key={key} detail={[key, value]} />
           ))}
         </ul>
-        <Button text="Show more" onClick={handleShowMore} />
+        <Button text="Show more" onClick={() => handleShowMore(camper.id)} />
       </div>
     </section>
   );

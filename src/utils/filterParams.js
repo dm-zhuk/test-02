@@ -28,14 +28,3 @@ export const getFilterParams = (elements) => {
 
   return filterParams;
 };
-
-const handleSubmit = (e) => {
-  e.preventDefault();
-
-  const filterParams = getFilterParams(e.target);
-
-  let filteredData = filterData(cards, filterParams);
-
-  setFilteredCards(filteredData);
-  toast.success("✔︎ Your selection applied");
-};

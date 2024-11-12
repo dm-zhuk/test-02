@@ -46,7 +46,7 @@ export const badgeIcons = [
   { name: "radio", label: "Radio", icon: <Radio /> },
 ];
 
-export const totalIcons = [
+export const featureIcons = [
   { name: "transmission", label: "Automatic", icon: <Automatic /> },
   { name: "engine", label: "Petrol", icon: <Petrol /> },
   { name: "kitchen", label: "Kitchen", icon: <Kitchen /> },

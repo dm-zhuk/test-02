@@ -36,6 +36,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.itemTitle h2 {
     color: var(--color-main);
 }
 
@@ -95,9 +98,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--color-btn-hover);
     width: 820px;
     height: 734px;
     border-radius: 16px;
+    border: 1px solid var(--color-border);
     background-color: var(--color-white);
 }

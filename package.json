@@ -11,7 +11,6 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@emotion/styled": "^11.13.0",
     "@reduxjs/toolkit": "^2.3.0",
     "axios": "^1.7.7",
     "modern-normalize": "^3.0.1",

@@ -3,16 +3,12 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../common/components/Buttons/Button";
 import styles from "./index.module.css";
 
-const HomePage = () => {
+const DetailsPage = () => {
   const navigate = useNavigate();
 
   return (
     <main className={styles.main}>
       <section className={styles.hero}>
-        <div className={styles.heroTitle}>
-          <h1>Campers of your dreams</h1>
-          <h2>You can find everything you want in our catalog</h2>
-        </div>
         <Button
           className={styles.heroBtn}
           type="button"
@@ -26,4 +22,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default DetailsPage;
