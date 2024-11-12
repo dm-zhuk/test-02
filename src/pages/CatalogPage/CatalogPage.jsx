@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
 import CardFilter from "../../common/components/CardFilter/CardFilter";
 import CardCatalog from "../../common/components/CardContent/CardCatalog";
 import { fetchData } from "../../store/dataSlice";
@@ -13,10 +14,9 @@ import styles from "./index.module.css";
 
 const CatalogPage = () => {
   const { campers, isLoading, error } = useSelector(getCampers);
-  const [filteredCampers, setFilteredCampers] = useState(campers);
+  const [filteredCampers, setFilteredCampers] = useState([]);
   const dispatch = useDispatch();
   const { currentPage, increasePage } = useContext(Pagination);
-  const { cards, isVisible } = pagination(currentPage, filteredCampers);
   const listRef = useRef();
 
   useEffect(() => {
@@ -26,13 +26,19 @@ const CatalogPage = () => {
   }, [dispatch, campers]);
 
   useEffect(() => {
-    campers.length && setFilteredCampers(campers);
+    if (Array.isArray(campers)) {
+      setFilteredCampers(campers);
+    }
   }, [campers]);
+
+  const { cards, isVisible } = pagination(currentPage, filteredCampers);
 
   const handleLoadMore = () => {
     increasePage();
     scrollTo(listRef);
   };
+
+  if (error) return <ErrorHandle error={error} />;
 
   return (
     <>
@@ -51,7 +57,7 @@ const CatalogPage = () => {
           )}
         </div>
       )}
-      <ErrorHandle error={error} />
+      <Outlet />
     </>
   );
 };

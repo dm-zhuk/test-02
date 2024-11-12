@@ -15,7 +15,6 @@ import { ReactComponent as Star } from "./Star.svg";
 import { ReactComponent as TV } from "./TV.svg";
 import { ReactComponent as Van } from "./Van.svg";
 import { ReactComponent as Water } from "./Water.svg";
-import { ReactComponent as Close } from "./Close.svg";
 
 export {
   AC,
@@ -35,5 +34,4 @@ export {
   TV,
   Van,
   Water,
-  Close,
 };

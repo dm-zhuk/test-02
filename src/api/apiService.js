@@ -29,6 +29,11 @@ export const fetchApi = {
     const url = `${BASE_URL}/?${params}`;
     return await fetchData(url);
   },
+  async getCamperById(id) {
+    // Added method to fetch details of a single camper
+    const url = `${BASE_URL}/${id}`;
+    return await fetchData(url);
+  },
   async createData(dataBody) {
     const method = "POST";
     const url = `${BASE_URL}`;

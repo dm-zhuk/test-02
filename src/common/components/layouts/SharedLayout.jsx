@@ -34,6 +34,17 @@ const SharedLayout = () => {
                 Catalog
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/favorites"
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.navList} ${styles.active}`
+                    : styles.navList
+                }>
+                Favorites
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </header>

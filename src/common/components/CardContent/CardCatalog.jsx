@@ -2,7 +2,7 @@ import React from "react";
 import CardContent from "./CardContent";
 import styles from "./index.module.css";
 
-const CardCatalog = ({ data, listRef }) => {
+const CardCatalog = ({ data = [], listRef }) => {
   return (
     <ul className={styles.list} ref={listRef}>
       {data.length > 0 ? (

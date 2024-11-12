@@ -9,7 +9,7 @@ const NotFound = () => {
         Page does not exist, please modify your search
       </h2>
       <h3>
-        <Link to="/">← Back to the home page</Link>
+        <Link to="/catalog">← Back to campers selection page</Link>
       </h3>
     </div>
   );
