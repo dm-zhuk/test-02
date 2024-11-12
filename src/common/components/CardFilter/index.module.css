@@ -16,6 +16,7 @@
 
 .label {
   color: var(--color-gray);
+  padding-bottom: 8px;
 }
 
 .inputBar {

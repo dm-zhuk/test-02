@@ -22,20 +22,20 @@ const ErrorFallback = ({ error, resetErrorBoundary }) => (
 );
 
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <PaginationProvider>
-              <Normalize />
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <App />
-              </React.Suspense>
-            </PaginationProvider>
-          </ErrorBoundary>
-        </PersistGate>
-      </Provider>
-    </BrowserRouter>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <BrowserRouter>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <PaginationProvider>
+            <Normalize />
+            <React.Suspense fallback={<div>Loading...</div>}>
+              <App />
+            </React.Suspense>
+          </PaginationProvider>
+        </ErrorBoundary>
+      </PersistGate>
+    </Provider>
+  </BrowserRouter>
+  // </React.StrictMode>
 );

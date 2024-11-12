@@ -20,17 +20,20 @@ const CatalogPage = () => {
   const listRef = useRef();
 
   useEffect(() => {
-    campers.length && setFilteredCampers(campers);
-  }, [campers]);
+    if (campers.length === 0) {
+      dispatch(fetchData());
+    }
+  }, [dispatch, campers]);
 
   useEffect(() => {
-    dispatch(fetchData());
-  }, [dispatch]);
+    campers.length && setFilteredCampers(campers);
+  }, [campers]);
 
   const handleLoadMore = () => {
     increasePage();
     scrollTo(listRef);
   };
+
   return (
     <>
       {!isLoading && !error && (

@@ -1,22 +1,25 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleFavorites } from "../store/favoritesSlice";
+import { toggleFavorite } from "../store/favoritesSlice";
+import { getFavorites } from "../store/selectors";
 
 const FavoriteIcon = ({ item }) => {
   const dispatch = useDispatch();
-  const favorites = useSelector((state) => state.favorites);
-  const isFavorited = favorites.some((favorite) => favorite._id === item._id);
+  const favorites = useSelector(getFavorites);
 
-  const handleToggleFavorite = () => {
-    dispatch(toggleFavorites(item));
+  const isFavorited = favorites.includes(item.id);
+
+  const handleToggleFavorite = (e) => {
+    e.stopPropagation();
+    dispatch(toggleFavorite(item.id));
   };
 
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 26 26"
-      stroke={isFavorited ? "#E44848" : "none"}
-      fill={isFavorited ? "none" : "black"}
+      stroke={isFavorited ? "#E44848" : "black"}
+      fill={isFavorited ? "#E44848" : "none"}
       strokeWidth="1.5"
       onClick={handleToggleFavorite}
       style={{ cursor: "pointer", width: "26px", height: "24px" }}>

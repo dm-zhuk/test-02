@@ -4,18 +4,17 @@ const favoritesSlice = createSlice({
   name: "favorites",
   initialState: [],
   reducers: {
-    toggleFavorites(state, action) {
-      const isExists = state.find(
-        (element) => element._id === action.payload._id
-      );
-      if (!isExists) {
-        state.push(action.payload);
+    toggleFavorite: (state, action) => {
+      const cardId = action.payload;
+      const isFavorite = state.includes(cardId);
+      if (isFavorite) {
+        return state.filter((id) => id !== cardId);
       } else {
-        return state.filter((element) => element._id !== action.payload._id);
+        state.push(cardId);
       }
     },
   },
 });
 
-export const { toggleFavorites } = favoritesSlice.actions;
+export const { toggleFavorite } = favoritesSlice.actions;
 export const favoritesReducer = favoritesSlice.reducer;

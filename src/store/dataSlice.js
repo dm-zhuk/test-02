@@ -2,11 +2,18 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
 import { fetchApi } from "../api/apiService";
 
-export const fetchData = createAsyncThunk("fetchAll", async () => {
-  const data = await fetchApi.getData();
-  toast.success(`Campers retrieved successfully`);
-  return data;
-});
+export const fetchData = createAsyncThunk(
+  "fetchAll",
+  async (_, { getState }) => {
+    const state = getState();
+    if (state.data.campers.length === 0) {
+      const data = await fetchApi.getData();
+      toast.success(`🚐 Campers retrieved successfully`);
+      return data;
+    }
+    return []; // Return an empty array if already fetched
+  }
+);
 
 const handlePending = (state) => {
   state.isLoading = true;

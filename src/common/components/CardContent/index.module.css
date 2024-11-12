@@ -84,11 +84,6 @@
     white-space: nowrap;
 }
 
-.btnWrapper {
-    flex-direction: column;
-    justify-content: space-between;
-}
-
 .badgeList {
     display: flex;
     flex-wrap: wrap;

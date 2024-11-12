@@ -123,7 +123,8 @@ button {
   letter-spacing: -0.08px;
 
   display: flex;
-  max-width: 173px;
+  min-width: 166px;
+  max-width: 170px;
   padding: 16px 42px;
   justify-content: center;
   align-items: center;
