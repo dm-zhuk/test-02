@@ -1,24 +1,18 @@
-export const compileDetails = (card) => {
+export const compileVehicleDetails = (card) => {
+  if (!card || typeof card !== "object") {
+    return [];
+  }
+
+  const { form, length, width, height, tank, consumption } = card;
+
   return [
-    { name: "form", value: card.form },
-    { name: "length", value: card.length },
-    { name: "width", value: card.width },
-    { name: "height", value: card.height },
-    { name: "tank", value: card.tank },
-    { name: "consumption", value: card.consumption },
+    { name: "form", value: form || "N/A" },
+    { name: "length", value: length || "N/A" },
+    { name: "width", value: width || "N/A" },
+    { name: "height", value: height || "N/A" },
+    { name: "tank", value: tank || "N/A" },
+    { name: "consumption", value: consumption || "N/A" },
   ];
-};
-
-export const compileFeatures = (list) => {
-  return Object.keys(list).reduce((acc, key) => {
-    if (!list[key]) return acc;
-    let name = key;
-    let iconName = key;
-
-    if (key === "iconName") name = "icon name";
-    acc.push({ name, value: list[key], iconName });
-    return acc;
-  }, []);
 };
 
 export const formatPrice = (price) => {

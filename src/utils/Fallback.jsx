@@ -1,9 +1,7 @@
 export const ErrorFallback = ({ error, resetErrorBoundary }) => (
-  <div role="alert" style={{ margin: "120px" }}>
-    <p>Something went wrong:</p>
-    <pre>{error.message}</pre>
-    <button onClick={resetErrorBoundary} style={{ margin: "64px" }}>
-      Try again
-    </button>
+  <div role="alert" style={{ margin: "120px", color: "var(--color-btn)" }}>
+    <h2>Check this one out, mate:</h2>
+    <pre style={{ margin: "32px 0" }}>{error.message}</pre>
+    <button onClick={resetErrorBoundary}>Try again</button>
   </div>
 );

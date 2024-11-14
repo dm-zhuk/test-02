@@ -1,11 +1,265 @@
-.detailsPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 120px 64px 0 64px;
-    gap: 64px;
+.detailsContainer {
+    margin: 0;
+    padding: 120px 64px 80px;
 }
 
-h1 {
-    color: #000;
+.itemWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.titleWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.titleWrapper h2 {
+    color: var(--color-main);
+}
+
+.itemSubtitle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.rating {
+    cursor: pointer;
+}
+
+.itemSubtitle .location svg {
+    margin: 0 4px 0 12px;
+}
+
+.gallery {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 28px 0;
+}
+
+.imageContainer {
+    width: 292px;
+    height: 312px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--color-light-gray);
+    border-radius: 10px;
+}
+
+.imageContainer img {
+    height: 150%;
+}
+
+.mirrored {
+    transform: scaleX(-1);
+}
+
+.description {
+    margin-bottom: 60px;
+}
+
+.featuresContainer {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.tabContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+}
+
+.featuresList {
+    display: flex;
+    flex-wrap: wrap;
+    height: 204px;
+    overflow-y: auto;
+    gap: 8px;
+}
+
+.featuresItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 0 18px;
+    height: 44px;
+    font-weight: 500;
+    line-height: 1.25;
+    border-radius: 100px;
+    background-color: var(--color-white);
+
+    &>svg {
+        height: 18px;
+    }
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--color-light-gray);
+    margin-bottom: 44px;
+}
+
+.tab {
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-bottom: 6px solid transparent;
+    transition: border-bottom 0.3s;
+}
+
+.active {
+    border-bottom: 5px solid var(--color-btn);
+}
+
+.details {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.detailsList {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(16, 24, 40, 0.1);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 133%;
+}
+
+.detailTitle::first-letter,
+.detailValue::first-letter {
+    text-transform: capitalize;
+}
+
+.feature {
+    padding: 5px 10px;
+    background-color: var(--color-input);
+    border-radius: 4px;
+}
+
+.vehicleDetails {
+    margin-top: 44px;
+}
+
+.vehicleDetails h4 {
+    margin-bottom: 10px;
+}
+
+.vehicleDetails li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review {
+    width: 386px;
+    color: var(--color-text);
+    line-height: 150%;
+    border-radius: 8px;
+}
+
+.reviewHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 125%;
+    color: var(--color-btn);
+    border-radius: 100%;
+    background-color: var(--color-white);
+}
+
+.reviewAuthor {
+    font-weight: bold;
+}
+
+.reviewRating {
+    color: var(--color-btn);
+    font-weight: bold;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+    color: var(--color-main);
+}
+
+.icon,
+.popIcon {
+    width: 16px;
+    height: 16px;
+    fill: transparent;
+    object-fit: contain;
+    stroke: var(--color-main);
+}
+
+.popIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.ratingBar {
+    display: block;
+    border-bottom: 1px solid var(--color-main);
+}
+
+.ratingLocation {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.locationBar {
+    display: flex;
+    gap: 4px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 125%;
 }

@@ -10,7 +10,7 @@ export const Input = ({
   error,
 }) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.inputWrapper}>
       <input
         type={type}
         name={name}

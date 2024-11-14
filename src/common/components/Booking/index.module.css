@@ -1,8 +1,4 @@
-.formTitle {
-  margin-bottom: 8px;
-}
-
-.Booking {
+.booking {
   display: flex;
   width: 641px;
   padding: 44px;
@@ -16,37 +12,48 @@
   background-color: white;
 }
 
-.Booking input,
-.Booking textarea {
+.bookingHeader {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  width: 527px;
+  gap: 8px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.booking input,
+.booking textarea {
   display: flex;
   width: 527px;
   align-items: flex-start;
-  padding: 0 18px;
+  padding: 18px 18px;
+  margin: 0;
   color: var(--color-label);
   border-radius: 12px;
   border-color: transparent;
   background-color: var(--color-input);
 }
 
-.Booking input {
+.booking input {
   min-height: 60px;
-  margin-bottom: 14px;
 }
 
-.Booking textarea {
-  margin-bottom: 10px;
-  padding-top: 18px;
+.booking textarea {
   resize: none;
 }
 
 .slogan {
   display: block;
-  margin-bottom: 24px;
   color: var(--color-gray);
 }
 
 .error {
   display: block;
   color: var(--color-btn);
-  margin-bottom: 8px;
 }

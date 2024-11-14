@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchCamperDetails, clearSelectedCamper } from "../../store/dataSlice";
@@ -7,11 +7,25 @@ import {
   getIsLoading,
   getError,
 } from "../../store/selectors";
+import { Star, Location } from "../../common/components/icons";
+import {
+  formatPrice,
+  compileVehicleDetails,
+} from "../../common/components/CardDetails/helper";
+import { CardBadgeSelected } from "../../common/components/CardBadge/CardBadgeSelected";
+import { placeholderImages } from "../../utils/placeholder";
+import Booking from "../../common/components/Booking/Booking";
 import Loader from "../../common/components/UI/Loader/Loader";
 import ErrorHandle from "../../utils/error";
 import styles from "./index.module.css";
 
-const DetailsPage = () => {
+const DetailsPage = ({ card }) => {
+  const [activeTab, setActiveTab] = useState("features");
+
+  const handleRatingClick = () => {
+    setActiveTab("reviews");
+  };
+
   const { id } = useParams();
   const dispatch = useDispatch();
   const selectedCamper = useSelector(getSelectedCamper);
@@ -32,19 +46,140 @@ const DetailsPage = () => {
   if (error) return <ErrorHandle error={error} />;
 
   if (!selectedCamper) {
-    return <div>No Camper Details Found</div>;
+    return <div>No details available for selected camper</div>;
   }
 
+  const detailedInfo = compileVehicleDetails(card);
+
   return (
-    <div className={styles.detailsPage}>
-      <h1>{selectedCamper.name}</h1>
-      <p>{selectedCamper.description}</p>
-      {selectedCamper.gallery && (
-        <img
-          src={selectedCamper.gallery[0]?.thumb || ""}
-          alt={selectedCamper.name}
-        />
-      )}
+    <div className={styles.detailsContainer}>
+      <section className={styles.itemWrapper} key={selectedCamper.id}>
+        <div className={styles.titleWrapper}>
+          <h2>{selectedCamper.name}</h2>
+          <div className={styles.itemSubtitle}>
+            <Star className={styles.rating} onClick={handleRatingClick}></Star>
+            {selectedCamper.rating}
+            <span> ({selectedCamper.reviews?.length || 0} Reviews)</span>
+            <span className={styles.location}>
+              <Location width={16} height={16} /> {selectedCamper.location}
+            </span>
+          </div>
+          <h2>{formatPrice(selectedCamper.price)}</h2>
+        </div>
+        <div className={styles.gallery}>
+          {Array.isArray(selectedCamper.gallery) &&
+            selectedCamper.gallery.length > 0 && (
+              <>
+                {selectedCamper.gallery.map((item, index) => (
+                  <div key={index} className={styles.imageContainer}>
+                    <img
+                      src={item.thumb}
+                      alt={`gallery ${index + 1}`}
+                      className={styles.galleryImage}
+                    />
+                  </div>
+                ))}
+
+                {4 - selectedCamper.gallery.length > 0 &&
+                  Array.from({ length: 4 - selectedCamper.gallery.length }).map(
+                    (_, index) => (
+                      <div
+                        key={`placeholder-${index}`}
+                        className={styles.imageContainer}>
+                        <img
+                          src={placeholderImages[index]}
+                          alt={`placeholder ${index + 1}`}
+                          className={styles.galleryImage}
+                        />
+                      </div>
+                    )
+                  )}
+              </>
+            )}
+        </div>
+        <p className={styles.description}>{selectedCamper.description}</p>
+      </section>
+      <section className="featuresContainer">
+        <nav className={styles.tabs}>
+          <button
+            className={`${styles.tab} ${
+              activeTab === "features" ? styles.active : ""
+            }`}
+            onClick={() => setActiveTab("features")}>
+            Features
+          </button>
+          <button
+            className={`${styles.tab} ${
+              activeTab === "reviews" ? styles.active : ""
+            }`}
+            onClick={() => setActiveTab("reviews")}>
+            Reviews
+          </button>
+        </nav>
+        <div className={styles.footer}>
+          <div className={styles.tabContent}>
+            {activeTab === "features" && (
+              <div className={styles.features}>
+                <ul className={styles.featuresList}>
+                  {Array.isArray(selectedCamper.features) &&
+                  selectedCamper.features.length > 0 ? (
+                    selectedCamper.features.map((feature, index) => (
+                      <li key={index} className={styles.featuresItem}>
+                        <CardBadgeSelected detail={[feature, ""]} />
+                      </li>
+                    ))
+                  ) : (
+                    <div>No features available</div>
+                  )}
+                </ul>
+                <div className={styles.vehicleDetails}>
+                  <h4 className={styles.detailsTitle}>Vehicle details</h4>
+                  <ul className={styles.detailsList}>
+                    {detailedInfo.map((detail, index) => (
+                      <li key={index}>
+                        <span className={styles.detailTitle}>
+                          {detail.name}
+                        </span>
+                        <span className={styles.detailValue}>
+                          {detail.value}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+            {activeTab === "reviews" && (
+              <div className={styles.reviews}>
+                {card.reviews.map((review, idx) => (
+                  <div key={idx} className={styles.review}>
+                    <div className={styles.reviewHeader}>
+                      <span className={styles.letter}>
+                        {review.reviewer_name[0]}
+                      </span>
+                      <div>
+                        <h3 className={styles.reviewAuthor}>
+                          {review.reviewer_name}
+                        </h3>
+                        <span className={styles.reviewRating}>
+                          {Array.from(
+                            { length: review.reviewer_rating },
+                            (_, idx) => (
+                              <Star key={idx} />
+                            )
+                          )}
+                        </span>
+                      </div>
+                    </div>
+                    <p className={styles.comment}>{review.comment}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+          <Booking />
+        </div>
+      </section>
     </div>
   );
 };

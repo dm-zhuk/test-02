@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 import CardFilter from "../../common/components/CardFilter/CardFilter";
 import CardCatalog from "../../common/components/CardContent/CardCatalog";
 import { fetchData } from "../../store/dataSlice";
@@ -57,7 +57,7 @@ const CatalogPage = () => {
           )}
         </div>
       )}
-      <Outlet />
+      {/* <Outlet /> */}
     </>
   );
 };

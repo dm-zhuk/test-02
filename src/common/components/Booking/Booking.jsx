@@ -8,16 +8,21 @@ import styles from "./index.module.css";
 
 const Booking = () => {
   const [errors, setErrors] = useState({});
+
   const [data, setData] = useState({
     name: "",
     email: "",
-    date: null,
+    date: "",
     comment: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setData((prev) => ({ ...prev, [name]: value }));
+
+    setData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -26,17 +31,19 @@ const Booking = () => {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      toast.success("Your request has been sent");
+      toast.success("Thank you for your booking!");
       window.location.reload();
     }
   };
 
   return (
-    <div className={styles.Booking}>
-      <h3 className={styles.formTitle}>Book your campervan now</h3>
-      <span className={styles.slogan}>
-        Stay connected! We are always ready to help you.
-      </span>
+    <div className={styles.booking}>
+      <div className={styles.bookingHeader}>
+        <h3>Book your campervan now</h3>
+        <span className={styles.slogan}>
+          Stay connected! We are always ready to help you.
+        </span>
+      </div>
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input
           type="text"
