@@ -77,7 +77,7 @@ const Booking = () => {
           pattern="/^[a-zA-Z0-9\s.,!?']*$/"
           error={errors.comment}
         />
-        <Button text="Send" type="submit" />
+        <Button text="Send" type="submit" style={{ marginTop: "10px" }} />
       </form>
     </div>
   );

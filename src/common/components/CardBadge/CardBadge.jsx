@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./index.module.css";
-import { badgeIcons } from "../../../utils/filterIcons";
+import { badgeIcons } from "../../../utils/FilterIcons";
 
 export const CardBadge = ({ detail }) => {
   const [key, value] = Array.isArray(detail) ? detail : ["", ""];

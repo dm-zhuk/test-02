@@ -16,10 +16,10 @@ import { CardBadgeSelected } from "../../common/components/CardBadge/CardBadgeSe
 import { placeholderImages } from "../../utils/placeholder";
 import Booking from "../../common/components/Booking/Booking";
 import Loader from "../../common/components/UI/Loader/Loader";
-import ErrorHandle from "../../utils/error";
+import ErrorHandle from "../../utils/Error";
 import styles from "./index.module.css";
 
-const DetailsPage = ({ card }) => {
+const DetailsPage = () => {
   const [activeTab, setActiveTab] = useState("features");
 
   const handleRatingClick = () => {
@@ -49,10 +49,10 @@ const DetailsPage = ({ card }) => {
     return <div>No details available for selected camper</div>;
   }
 
-  const detailedInfo = compileVehicleDetails(card);
+  const detailedInfo = compileVehicleDetails(selectedCamper);
 
   return (
-    <div className={styles.detailsContainer}>
+    <div className={styles.selectedContainer}>
       <section className={styles.itemWrapper} key={selectedCamper.id}>
         <div className={styles.titleWrapper}>
           <h2>{selectedCamper.name}</h2>
@@ -99,7 +99,7 @@ const DetailsPage = ({ card }) => {
         </div>
         <p className={styles.description}>{selectedCamper.description}</p>
       </section>
-      <section className="featuresContainer">
+      <section className="detailsContainer">
         <nav className={styles.tabs}>
           <button
             className={`${styles.tab} ${
@@ -116,24 +116,18 @@ const DetailsPage = ({ card }) => {
             Reviews
           </button>
         </nav>
-        <div className={styles.footer}>
+        <div className={styles.tabContentContainer}>
           <div className={styles.tabContent}>
             {activeTab === "features" && (
               <div className={styles.features}>
                 <ul className={styles.featuresList}>
-                  {Array.isArray(selectedCamper.features) &&
-                  selectedCamper.features.length > 0 ? (
-                    selectedCamper.features.map((feature, index) => (
-                      <li key={index} className={styles.featuresItem}>
-                        <CardBadgeSelected detail={[feature, ""]} />
-                      </li>
-                    ))
-                  ) : (
-                    <div>No features available</div>
-                  )}
+                  {selectedCamper &&
+                    Object.entries(selectedCamper).map(([key, value]) => (
+                      <CardBadgeSelected key={key} detail={[key, value]} />
+                    ))}
                 </ul>
-                <div className={styles.vehicleDetails}>
-                  <h4 className={styles.detailsTitle}>Vehicle details</h4>
+                <div className={styles.VehicleDetails}>
+                  <h3>Vehicle details</h3>
                   <ul className={styles.detailsList}>
                     {detailedInfo.map((detail, index) => (
                       <li key={index}>
@@ -151,7 +145,7 @@ const DetailsPage = ({ card }) => {
             )}
             {activeTab === "reviews" && (
               <div className={styles.reviews}>
-                {card.reviews.map((review, idx) => (
+                {selectedCamper.reviews.map((review, idx) => (
                   <div key={idx} className={styles.review}>
                     <div className={styles.reviewHeader}>
                       <span className={styles.letter}>
@@ -170,8 +164,8 @@ const DetailsPage = ({ card }) => {
                           )}
                         </span>
                       </div>
-                    </div>
-                    <p className={styles.comment}>{review.comment}</p>
+                    </div>{" "}
+                    <p>{review.comment}</p>
                   </div>
                 ))}
               </div>
