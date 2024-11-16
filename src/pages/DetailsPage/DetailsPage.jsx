@@ -8,14 +8,13 @@ import {
   getError,
 } from "../../store/selectors";
 import { Star, Location } from "../../common/components/icons";
-import {
-  formatPrice,
-  compileVehicleDetails,
-} from "../../common/components/CardDetails/helper";
+import { compileVehicleDetails } from "../../common/components/CardDetails/helper";
 import { CardBadgeSelected } from "../../common/components/CardBadge/CardBadgeSelected";
 import { placeholderImages } from "../../utils/placeholder";
+import StarRating from "../../utils/StarRating";
 import Booking from "../../common/components/Booking/Booking";
 import Loader from "../../common/components/UI/Loader/Loader";
+import { formatPrice } from "../../utils/formatLabel";
 import ErrorHandle from "../../utils/Error";
 import styles from "./index.module.css";
 
@@ -57,9 +56,13 @@ const DetailsPage = () => {
         <div className={styles.titleWrapper}>
           <h2>{selectedCamper.name}</h2>
           <div className={styles.itemSubtitle}>
-            <Star className={styles.rating} onClick={handleRatingClick}></Star>
-            {selectedCamper.rating}
-            <span> ({selectedCamper.reviews?.length || 0} Reviews)</span>
+            <Star />
+            <div className={styles.pointer}>
+              {selectedCamper.rating}
+              <span onClick={handleRatingClick}>
+                ({selectedCamper.reviews?.length || 0} Reviews)
+              </span>
+            </div>
             <span className={styles.location}>
               <Location width={16} height={16} /> {selectedCamper.location}
             </span>
@@ -120,13 +123,15 @@ const DetailsPage = () => {
           <div className={styles.tabContent}>
             {activeTab === "features" && (
               <div className={styles.features}>
-                <ul className={styles.featuresList}>
-                  {selectedCamper &&
-                    Object.entries(selectedCamper).map(([key, value]) => (
-                      <CardBadgeSelected key={key} detail={[key, value]} />
-                    ))}
-                </ul>
-                <div className={styles.VehicleDetails}>
+                <div className={styles.featuresDetails}>
+                  <ul className={styles.featuresList}>
+                    {selectedCamper &&
+                      Object.entries(selectedCamper).map(([key, value]) => (
+                        <CardBadgeSelected key={key} detail={[key, value]} />
+                      ))}
+                  </ul>
+                </div>
+                <div className={styles.vehicleDetails}>
                   <h3>Vehicle details</h3>
                   <ul className={styles.detailsList}>
                     {detailedInfo.map((detail, index) => (
@@ -156,12 +161,9 @@ const DetailsPage = () => {
                           {review.reviewer_name}
                         </h3>
                         <span className={styles.reviewRating}>
-                          {Array.from(
-                            { length: review.reviewer_rating },
-                            (_, idx) => (
-                              <Star key={idx} />
-                            )
-                          )}
+                          <StarRating
+                            reviewer_rating={review.reviewer_rating}
+                          />
                         </span>
                       </div>
                     </div>{" "}

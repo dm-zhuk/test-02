@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { CardBadge } from "../CardBadge/CardBadge";
 import { Star, Location } from "../icons";
-import { formatPrice } from "../CardDetails/helper";
+import { formatPrice } from "../../../utils/formatLabel";
 import FavoriteIcon from "../../../utils/FavoriteIcon";
 import Button from "../Buttons/Button";
 import styles from "./index.module.css";

@@ -1,3 +1,9 @@
+import {
+  formatLabel,
+  formatSpace,
+  formatTank,
+} from "../../../utils/formatLabel";
+
 export const compileFeatures = (list) => {
   if (!list || typeof list !== "object") return [];
 
@@ -17,24 +23,12 @@ export const compileVehicleDetails = (card) => {
 
   const { form, length, width, height, tank, consumption } = card;
 
-  const formatLabel = (label) => {
-    return label.replace(/([a-z])([A-Z])/g, "$1 $2");
-  };
-
   return [
     { name: "Form", value: form ? formatLabel(form) : "N/A" },
-    { name: "Length", value: length ? `${length}m` : "N/A" },
-    { name: "Width", value: width ? `${width}m` : "N/A" },
-    { name: "Height", value: height ? `${height}m` : "N/A" },
-    { name: "Tank", value: tank ? `${tank}l` : "N/A" },
+    { name: "Length", value: length ? formatSpace(length) : "N/A" },
+    { name: "Width", value: width ? formatSpace(width) : "N/A" },
+    { name: "Height", value: height ? formatSpace(height) : "N/A" },
+    { name: "Tank", value: tank ? formatTank(tank) : "N/A" },
     { name: "Consumption", value: consumption || "N/A" },
   ];
-};
-
-export const formatPrice = (price) => {
-  return price.toLocaleString("en-IE", {
-    style: "currency",
-    currency: "EUR",
-    minimumFractionDigits: 2,
-  });
 };

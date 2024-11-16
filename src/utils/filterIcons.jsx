@@ -47,8 +47,8 @@ export const badgeIcons = [
 ];
 
 export const featureIcons = [
-  { name: "transmission", label: "Automatic", icon: <Automatic /> },
-  { name: "engine", label: "Petrol", icon: <Petrol /> },
+  { name: "transmission", label: "Transmission", icon: <Automatic /> },
+  { name: "engine", label: "Engine", icon: <Petrol /> },
   { name: "kitchen", label: "Kitchen", icon: <Kitchen /> },
   { name: "AC", label: "AC", icon: <AC /> },
   { name: "bathroom", label: "Bathroom", icon: <Bathroom /> },

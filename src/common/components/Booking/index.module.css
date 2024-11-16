@@ -55,4 +55,5 @@
 .error {
   display: block;
   color: var(--color-btn);
+  margin-bottom: 4px;
 }

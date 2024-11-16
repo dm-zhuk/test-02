@@ -12,6 +12,7 @@ import { ReactComponent as Microwave } from "./Microwave.svg";
 import { ReactComponent as Petrol } from "./Petrol.svg";
 import { ReactComponent as Radio } from "./Radio.svg";
 import { ReactComponent as Star } from "./Star.svg";
+import { ReactComponent as StarGray } from "./StarGray.svg";
 import { ReactComponent as TV } from "./TV.svg";
 import { ReactComponent as Van } from "./Van.svg";
 import { ReactComponent as Water } from "./Water.svg";
@@ -31,6 +32,7 @@ export {
   Petrol,
   Radio,
   Star,
+  StarGray,
   TV,
   Van,
   Water,

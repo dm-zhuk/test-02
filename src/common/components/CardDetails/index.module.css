@@ -12,9 +12,6 @@
   margin-top: 24px;
   padding-top: 24px;
   border-top: 1px solid rgba(16, 24, 40, 0.1);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 133%;
 }
 
 .detailTitle::first-letter,
@@ -57,18 +54,11 @@
   border-radius: 4px;
 }
 
-.vehicleDetails {
-  margin-top: 44px;
-}
-
-.vehicleDetails h4 {
-  margin-bottom: 10px;
-}
-
 .vehicleDetails li {
   display: flex;
   justify-content: space-between;
   padding: 5px 0;
+  font-weight: 500;
 }
 
 .reviews {
@@ -80,7 +70,6 @@
 .review {
   width: 386px;
   color: var(--color-text);
-  line-height: 150%;
   border-radius: 8px;
 }
 
