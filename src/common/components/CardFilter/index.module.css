@@ -34,13 +34,13 @@
 .cityInput {
   border: none;
   line-height: 1.5;
-  padding: 0 0 0 28px;
   background: var(--color-input);
+  padding-left: 28px;
 }
 
 .locationIcon {
   position: absolute;
-  bottom: 16px;
+  bottom: 18px;
   left: 18px;
   width: 20px;
   height: 20px;

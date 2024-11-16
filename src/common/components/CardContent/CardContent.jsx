@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { CardBadge } from "../CardBadge/CardBadge";
-import { Star, Location } from "../icons";
-import { formatPrice } from "../../../utils/formatLabel";
+import { Star } from "../icons";
+import { FormattedLocation, formatPrice } from "../../../utils/FormatLabel";
 import FavoriteIcon from "../../../utils/FavoriteIcon";
 import Button from "../Buttons/Button";
 import styles from "./index.module.css";
@@ -30,13 +30,12 @@ const CardContent = ({ item }) => {
             </div>
           </div>
 
-          <div className={styles.itemSubtitle}>
-            <Star />
-            {item.rating}
-            <span> ({item.reviews?.length || 0} Reviews)</span>
-            <span className={styles.location}>
-              <Location width={16} height={16} /> {item.location}
-            </span>
+          <div className={styles.itemsSubtitle}>
+            <div className={styles.itemSubtitle}>
+              <Star />
+              {item.rating}({item.reviews?.length || 0} Reviews)
+            </div>
+            <FormattedLocation location={item.location} />
           </div>
         </div>
         <p>{item.description}</p>

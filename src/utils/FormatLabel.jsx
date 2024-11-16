@@ -1,4 +1,21 @@
-export const formatLabel = (label) => {
+import React from "react";
+import { Location } from "../common/components/icons";
+
+export const FormattedLocation = ({ location }) => {
+  const formatLocation = (location) => {
+    const [country, city] = location.split(",").map((part) => part.trim());
+    return `${city}, ${country}`;
+  };
+
+  return (
+    <span>
+      <Location width={16} height={16} style={{ marginRight: 4 }} />
+      {formatLocation(location)}
+    </span>
+  );
+};
+
+export const FormatLabel = (label) => {
   return label
     .replace(/([A-Z])/g, " $1")
     .trim()

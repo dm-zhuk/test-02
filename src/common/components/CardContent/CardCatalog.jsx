@@ -4,7 +4,7 @@ import styles from "./index.module.css";
 
 const CardCatalog = ({ data = [], listRef }) => {
   return (
-    <ul className={styles.list} ref={listRef}>
+    <ul className={styles.catalogContainer} ref={listRef}>
       {data.length > 0 ? (
         data.map((item) => <CardContent item={item} key={item.id} />)
       ) : (

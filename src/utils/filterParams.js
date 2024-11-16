@@ -1,5 +1,3 @@
-import toast from "react-hot-toast";
-
 export const getFilterParams = (elements) => {
   const { location, AC, automatic, kitchen, TV, bathroom, form } = elements;
 

@@ -1,6 +1,6 @@
 import React from "react";
-import { featureIcons } from "../../../utils/filterIcons";
-import { formatValue } from "../../../utils/formatLabel";
+import { featureIcons } from "../../../utils/FilterIcons";
+import { formatValue } from "../../../utils/FormatLabel";
 import styles from "./index.module.css";
 
 export const CardBadgeSelected = ({ detail }) => {

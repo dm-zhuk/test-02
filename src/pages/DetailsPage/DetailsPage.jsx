@@ -7,14 +7,14 @@ import {
   getIsLoading,
   getError,
 } from "../../store/selectors";
-import { Star, Location } from "../../common/components/icons";
+import { Star } from "../../common/components/icons";
 import { compileVehicleDetails } from "../../common/components/CardDetails/helper";
 import { CardBadgeSelected } from "../../common/components/CardBadge/CardBadgeSelected";
 import { placeholderImages } from "../../utils/placeholder";
 import StarRating from "../../utils/StarRating";
 import Booking from "../../common/components/Booking/Booking";
 import Loader from "../../common/components/UI/Loader/Loader";
-import { formatPrice } from "../../utils/formatLabel";
+import { FormattedLocation, formatPrice } from "../../utils/FormatLabel";
 import ErrorHandle from "../../utils/Error";
 import styles from "./index.module.css";
 
@@ -55,17 +55,17 @@ const DetailsPage = () => {
       <section className={styles.itemWrapper} key={selectedCamper.id}>
         <div className={styles.titleWrapper}>
           <h2>{selectedCamper.name}</h2>
-          <div className={styles.itemSubtitle}>
-            <Star />
-            <div className={styles.pointer}>
-              {selectedCamper.rating}
-              <span onClick={handleRatingClick}>
-                ({selectedCamper.reviews?.length || 0} Reviews)
-              </span>
+          <div className={styles.itemsSubtitle}>
+            <div className={styles.itemSubtitle}>
+              <Star />
+              <div className={styles.pointer}>
+                {selectedCamper.rating}
+                <span onClick={handleRatingClick}>
+                  ({selectedCamper.reviews?.length || 0} Reviews)
+                </span>
+              </div>
             </div>
-            <span className={styles.location}>
-              <Location width={16} height={16} /> {selectedCamper.location}
-            </span>
+            <FormattedLocation location={selectedCamper.location} />
           </div>
           <h2>{formatPrice(selectedCamper.price)}</h2>
         </div>
@@ -166,7 +166,7 @@ const DetailsPage = () => {
                           />
                         </span>
                       </div>
-                    </div>{" "}
+                    </div>
                     <p>{review.comment}</p>
                   </div>
                 ))}

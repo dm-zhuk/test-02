@@ -1,8 +1,8 @@
 import {
-  formatLabel,
+  FormatLabel,
   formatSpace,
   formatTank,
-} from "../../../utils/formatLabel";
+} from "../../../utils/FormatLabel";
 
 export const compileFeatures = (list) => {
   if (!list || typeof list !== "object") return [];
@@ -24,7 +24,7 @@ export const compileVehicleDetails = (card) => {
   const { form, length, width, height, tank, consumption } = card;
 
   return [
-    { name: "Form", value: form ? formatLabel(form) : "N/A" },
+    { name: "Form", value: form ? FormatLabel(form) : "N/A" },
     { name: "Length", value: length ? formatSpace(length) : "N/A" },
     { name: "Width", value: width ? formatSpace(width) : "N/A" },
     { name: "Height", value: height ? formatSpace(height) : "N/A" },
