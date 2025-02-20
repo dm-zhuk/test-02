@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./index.module.css";
+import styles from "./Button.module.css";
 
 const Checkbox = ({ name, label, icon, iconSize = 32, checked, onChange }) => {
   return (

@@ -1,5 +1,6 @@
 import { ReactComponent as AC } from "./AC.svg";
 import { ReactComponent as Alcove } from "./Alcove.svg";
+import { ReactComponent as ArrowUp } from "./ArrowUp.svg";
 import { ReactComponent as Automatic } from "./Automatic.svg";
 import { ReactComponent as Bathroom } from "./Bathroom.svg";
 import { ReactComponent as Fridge } from "./Fridge.svg";
@@ -20,6 +21,7 @@ import { ReactComponent as Water } from "./Water.svg";
 export {
   AC,
   Alcove,
+  ArrowUp,
   Automatic,
   Bathroom,
   Fridge,

@@ -1,27 +1,36 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { validateForm } from "./helper";
+import { validateForm } from "./validator";
 import { Input } from "../UI/Input/Input";
+import DatePicker from 'react-datepicker';
 import { Textarea } from "../UI/Textarea/Textarea";
 import Button from "../Buttons/Button";
 import styles from "./index.module.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Booking = () => {
   const [errors, setErrors] = useState({});
-
+  const [startDate, setStartDate] = useState(null);
   const [data, setData] = useState({
     name: "",
     email: "",
-    date: "",
+    date: null,
     comment: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setData((prev) => ({
       ...prev,
       [name]: value,
+    }));
+  };
+
+  const handleDateChange = (date) => {
+    setStartDate(date);
+    setData((prev) => ({
+      ...prev,
+      date: date,
     }));
   };
 
@@ -31,8 +40,15 @@ const Booking = () => {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      toast.success("Thank you for your booking!");
-      window.location.reload();
+      toast.success("Thank you for booking! We'll contact you soon.");
+
+      setData({
+        name: "",
+        email: "",
+        date: null,
+        comment: "",
+      });
+      setStartDate(null);
     }
   };
 
@@ -48,35 +64,36 @@ const Booking = () => {
         <Input
           type="text"
           name="name"
+          value={data.name}
           placeholder="Name*"
           onChange={handleChange}
-          pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          error={errors.name}
         />
+        {errors.name && <span className={styles.error}>{errors.name}</span>}
+
         <Input
           type="email"
           name="email"
+          value={data.email}
           placeholder="Email*"
           onChange={handleChange}
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-          error={errors.email}
         />
-        <Input
-          type="date"
-          name="date"
-          placeholder="Booking date*"
-          onChange={handleChange}
-          error={errors.date}
+        {errors.email && <span className={styles.error}>{errors.email}</span>}
+
+        <DatePicker
+          selected={startDate}
+          onChange={handleDateChange}
+          placeholderText="Booking date*"
         />
+        {errors.date && <span className={styles.error}>{errors.date}</span>}
 
         <Textarea
           name="comment"
           placeholder="Comment"
+          value={data.comment}
           onChange={handleChange}
-          rows="4"
-          pattern="/^[a-zA-Z0-9\s.,!?']*$/"
-          error={errors.comment}
+          rows={4}
         />
+
         <Button text="Send" type="submit" style={{ marginTop: "10px" }} />
       </form>
     </div>

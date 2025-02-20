@@ -1,4 +1,4 @@
-import styles from "./index.module.css";
+import styles from "./Button.module.css";
 
 const RadioButton = ({ label, icon, value }) => {
   return (

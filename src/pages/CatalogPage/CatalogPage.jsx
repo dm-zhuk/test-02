@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CardFilter from "../../common/components/CardFilter/CardFilter";
 import CardCatalog from "../../common/components/CardContent/CardCatalog";

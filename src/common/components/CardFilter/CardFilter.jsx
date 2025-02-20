@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import toast from "react-hot-toast";
 import Pagination from "../../../utils/context";
 import Button from "../Buttons/Button";
@@ -17,6 +17,7 @@ const CardFilter = ({ cards, setFilteredCards }) => {
     e.preventDefault();
     const filterParams = getFilterParams(e.target);
     let filteredData = filterData(cards, filterParams);
+    
     resetPage();
 
     setFilteredCards(filteredData);

@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { CardBadge } from "../CardBadge/CardBadge";
 import { Star } from "../icons";
@@ -33,7 +33,7 @@ const CardContent = ({ item }) => {
           <div className={styles.itemsSubtitle}>
             <div className={styles.itemSubtitle}>
               <Star />
-              {item.rating}({item.reviews?.length || 0} Reviews)
+              <span>{item.rating} ({item.reviews?.length || 0} Reviews)</span>
             </div>
             <FormattedLocation location={item.location} />
           </div>
@@ -48,6 +48,23 @@ const CardContent = ({ item }) => {
       </div>
     </section>
   );
+};
+
+CardContent.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    rating: PropTypes.number,
+    reviews: PropTypes.arrayOf(PropTypes.object),
+    location: PropTypes.string,
+    description: PropTypes.string,
+    gallery: PropTypes.arrayOf(
+      PropTypes.shape({
+        thumb: PropTypes.string,
+      })
+    ),
+  }).isRequired,
 };
 
 export default CardContent;

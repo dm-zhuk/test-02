@@ -1,5 +1,6 @@
-import React from "react";
+import PropTypes from "prop-types";
 import CardContent from "./CardContent";
+import ScrollToTop from '../UI/ScrollToTop/ScrollToTop';
 import styles from "./index.module.css";
 
 const CardCatalog = ({ data = [], listRef }) => {
@@ -12,8 +13,14 @@ const CardCatalog = ({ data = [], listRef }) => {
           Please review your query and try again!
         </div>
       )}
+      <ScrollToTop />
     </ul>
   );
+};
+
+CardCatalog.propTypes = {
+  data: PropTypes.array.isRequired,
+  listRef: PropTypes.object,
 };
 
 export default CardCatalog;

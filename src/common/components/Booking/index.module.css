@@ -8,7 +8,6 @@
   height: fit-content;
   border: 1px solid var(--color-border);
   border-radius: 10px;
-  background-color: white;
 }
 
 .bookingHeader {
@@ -33,10 +32,15 @@
   align-items: flex-start;
   padding: 18px 18px;
   margin: 0;
-  color: var(--color-label);
+  color: var(--color-gray);
   border-radius: 12px;
   border-color: transparent;
   background-color: var(--color-input);
+
+  &:focus {
+    outline: none;
+    background-color: var(--color-input);
+  }
 }
 
 .booking input {
@@ -53,7 +57,6 @@
 }
 
 .error {
-  display: block;
   color: var(--color-btn);
-  margin-bottom: 4px;
+  font-size: 12px;
 }

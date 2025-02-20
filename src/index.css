@@ -116,29 +116,3 @@ a {
 a:hover {
   transform: scale(1.03);
 }
-
-button {
-  border-radius: 200px;
-  border: none;
-  background-color: var(--color-btn);
-  color: var(--color-white);
-
-  font-weight: 500;
-  letter-spacing: -0.08px;
-
-  display: flex;
-  min-width: 166px;
-  max-width: 170px;
-  padding: 16px 42px;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-
-  &:focus,
-  &:focus-visible,
-  &:hover {
-    background-color: var(--color-btn-hover);
-    transform: scale(1.02);
-    transition: border-color 0.25s;
-  }
-}

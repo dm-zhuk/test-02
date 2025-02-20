@@ -87,6 +87,10 @@
     gap: 4px;
 }
 
+.itemSubtitle span {
+    border-bottom: 1px solid #101828;
+}
+
 .badgeList {
     display: flex;
     flex-wrap: wrap;

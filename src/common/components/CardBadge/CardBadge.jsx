@@ -1,9 +1,9 @@
-import React from "react";
+import PropTypes from "prop-types";
 import { formatValue } from "../../../utils/FormatLabel";
-import { badgeIcons } from "../../../utils/FilterIcons";
+import { badgeIcons } from "../../../utils/filterIcons";
 import styles from "./index.module.css";
 
-export const CardBadge = ({ detail }) => {
+  export const CardBadge = ({ detail }) => {
   const [key, value] = Array.isArray(detail) ? detail : ["", ""];
 
   const badge = badgeIcons.find(({ name }) => name === key);
@@ -18,3 +18,9 @@ export const CardBadge = ({ detail }) => {
     </li>
   );
 };
+
+CardBadge.propTypes = {
+  detail: PropTypes.array.isRequired,
+};
+
+export default CardBadge;

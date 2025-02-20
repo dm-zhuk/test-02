@@ -2,7 +2,8 @@ export const validateForm = (data) => {
   const newErrors = {};
 
   const namePattern =
-    /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
+    /^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ]+(([' -][a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ ])?[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ]*)*$/;
+
   const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
   if (!data.name) {
@@ -18,7 +19,7 @@ export const validateForm = (data) => {
   }
 
   if (!data.date) {
-    newErrors.date = "Date is required";
+    newErrors.date = "Please select a valid date";
   }
 
   return newErrors;
