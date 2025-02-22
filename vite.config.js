@@ -7,6 +7,7 @@ import { resolve } from "path";
 const root = resolve("src");
 
 export default defineConfig({
+  base: "/test-02/",
   plugins: [
     react(),
     svgr({
