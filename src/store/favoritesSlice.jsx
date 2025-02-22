@@ -5,12 +5,11 @@ const favoritesSlice = createSlice({
   initialState: [],
   reducers: {
     toggleFavorite: (state, action) => {
-      const cardId = action.payload;
-      const isFavorite = state.includes(cardId);
-      if (isFavorite) {
-        return state.filter((id) => id !== cardId);
+      const id = action.payload;
+      if (state.includes(id)) {
+        return state.filter(favId => favId !== id);
       } else {
-        state.push(cardId);
+        return [...state, id];
       }
     },
   },

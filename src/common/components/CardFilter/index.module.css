@@ -47,6 +47,8 @@
 }
 
 .filterSection {
+  width: 360px;
+  height: auto;
   margin-bottom: 8px;
 }
 

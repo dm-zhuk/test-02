@@ -140,7 +140,7 @@
     padding: 44px 80px;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     border-radius: 10px;
     background: var(--color-input);
 }

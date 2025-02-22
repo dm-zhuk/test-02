@@ -1,7 +1,12 @@
 .catalogContainer {
     display: flex;
     flex-direction: column;
+    min-width: 888px;
     gap: 32px;
+
+    &> :last-child {
+        margin-top: -32px;
+    }
 }
 
 .itemWrapper {
@@ -101,8 +106,11 @@
 .notFound {
     display: flex;
     align-items: center;
-    width: 100%;
-    height: 10vh;
-    color: var(--color-btn);
+    justify-content: center;
+    height: 60vh;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.33;
+    color: var(--color-label);
     text-align: center;
 }

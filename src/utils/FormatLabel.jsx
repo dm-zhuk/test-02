@@ -1,4 +1,3 @@
-import React from "react";
 import { Location } from "../common/components/icons";
 
 export const FormattedLocation = ({ location }) => {

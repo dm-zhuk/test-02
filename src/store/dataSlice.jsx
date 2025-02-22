@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
 import { fetchApi } from "../api/apiService";
 
-// Thunk to fetch all campers
 export const fetchData = createAsyncThunk(
   "fetchAll",
   async (_, { getState }) => {
@@ -11,9 +10,7 @@ export const fetchData = createAsyncThunk(
       try {
         const data = await fetchApi.getData();
         const matchesCount = data.items.length;
-        toast.success(
-          `🚐 ${matchesCount} match${matchesCount > 1 ? "es" : ""} retrieved`
-        );
+        toast.success(`🚐 ${matchesCount} match${matchesCount > 1 ? "es" : ""} retrieved`);
         return data;
       } catch (error) {
         toast.error("Failed to fetch campers data.");
@@ -40,26 +37,16 @@ export const fetchCamperDetails = createAsyncThunk(
   }
 );
 
-const handlePending = (state) => {
-  state.isLoading = true;
-  state.error = "";
-};
-const handleRejected = (state, action) => {
-  state.isLoading = false;
-  state.error = action.error.message;
-};
-const handleFulfilled = (state) => {
-  state.isLoading = false;
+const initialState = {
+  campers: [],
+  selectedCamper: null,
+  isLoading: false,
+  error: null,
 };
 
 const dataSlice = createSlice({
   name: "data",
-  initialState: {
-    campers: [],
-    selectedCamper: null,
-    isLoading: false,
-    error: null,
-  },
+  initialState,
   reducers: {
     clearSelectedCamper: (state) => {
       state.selectedCamper = null;
@@ -67,8 +54,17 @@ const dataSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase(fetchData.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
       .addCase(fetchData.fulfilled, (state, action) => {
         state.campers = action.payload.items;
+        state.isLoading = false;
+      })
+      .addCase(fetchData.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
       })
       .addCase(fetchCamperDetails.pending, (state) => {
         state.isLoading = true;
@@ -83,12 +79,6 @@ const dataSlice = createSlice({
         state.error = action.payload || "Failed to load camper details";
         state.isLoading = false;
       })
-      .addMatcher((action) => action.type.endsWith("/pending"), handlePending)
-      .addMatcher((action) => action.type.endsWith("/rejected"), handleRejected)
-      .addMatcher(
-        (action) => action.type.endsWith("/fulfilled"),
-        handleFulfilled
-      );
   },
 });
 

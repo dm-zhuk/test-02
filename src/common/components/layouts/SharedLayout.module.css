@@ -2,11 +2,10 @@
   position: fixed;
   z-index: 10;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   padding: 24px 64px;
-  align-items: center;
-  gap: 450px;
-
   border-bottom: 1px solid var(--color-badge);
   background: var(--color-input);
   box-shadow: 0 2px 4px var(--shadow-gray);
@@ -16,21 +15,27 @@
   flex-shrink: 0;
 }
 
+.navWrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
 .navList {
   display: flex;
+  gap: 32px;
   font-weight: 500;
   color: var(--color-main);
   text-decoration: none;
   list-style: none;
-  gap: 32px;
 }
 
 .navList a {
   position: relative;
+}
 
-  &.active {
-    color: var(--color-btn-hover);
-  }
+.navList a.active {
+  color: var(--color-btn-hover);
 }
 
 .navList a.active::after {

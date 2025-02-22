@@ -67,7 +67,7 @@ const DetailsPage = () => {
             </div>
             <FormattedLocation location={selectedCamper.location} />
           </div>
-          <h2>{formatPrice(selectedCamper.price)}</h2>
+          <h2>{selectedCamper ? formatPrice(selectedCamper.price) : 'N/A'}</h2>
         </div>
         <div className={styles.gallery}>
           {Array.isArray(selectedCamper.gallery) &&

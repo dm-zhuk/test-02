@@ -3,24 +3,22 @@ import { AnimatePresence, motion } from "framer-motion";
 import styles from "./index.module.css";
 import { ArrowUp } from "../../icons/icons";
 
-const AppCtx = createContext({
-  isModalShown: false,
-  toggleModal: () => {},
+const AppContext = createContext({
   currentPage: 1,
   increasePage: () => {},
   resetPage: () => {},
 });
 
 const ScrollToTop = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isBtnVisible, setisBtnVisible] = useState(false);
   const [jump, setJump] = useState(false);
-  const { isModalShown } = useContext(AppCtx);
+  const { isModalShown } = useContext(AppContext);
 
   const toggleVisibility = () => {
     if (window.scrollY > 300) {
-      setIsVisible(true);
+      setisBtnVisible(true);
     } else {
-      setIsVisible(false);
+      setisBtnVisible(false);
     }
   };
 
@@ -50,7 +48,7 @@ const ScrollToTop = () => {
   return (
     <div className="scroll-to-top">
       <AnimatePresence>
-        {isVisible && !isModalShown && (
+        {isBtnVisible && !isModalShown && (
           <motion.button
             initial={{ opacity: 0 }}
             exit={{ opacity: 0 }}

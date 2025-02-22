@@ -7,7 +7,7 @@ import { getCampers } from "../../store/selectors";
 import { scrollTo } from "../../utils/scroller";
 import ErrorHandle from "../../utils/error";
 import Pagination from "../../utils/context";
-import { pagination } from "../../utils/pagination";
+import { paginate } from "../../utils/pagination";
 import Button from "../../common/components/Buttons/Button";
 import styles from "./index.module.css";
 
@@ -30,7 +30,7 @@ const CatalogPage = () => {
     }
   }, [campers]);
 
-  const { cards, isVisible } = pagination(currentPage, filteredCampers);
+  const { cards, isBtnVisible } = paginate(currentPage, filteredCampers);
 
   const handleLoadMore = () => {
     increasePage();
@@ -47,7 +47,7 @@ const CatalogPage = () => {
             <CardFilter cards={campers} setFilteredCards={setFilteredCampers} />
             <CardCatalog data={cards} listRef={listRef} />
           </div>
-          {isVisible && (
+          {isBtnVisible && (
             <Button
               className={styles.loadMore}
               text="Load more"
