@@ -6,15 +6,24 @@ TravelTrucks is the front-end part of a web application designed for the rental 
 Features:
 
 - Multiple Pages: The application consists of several key pages:
+
   - Home Page: Features a banner with a primary call to action.
-    ![home](https://files.fm/f/bztptpukm4)
+
+    ![home](https://drive.google.com/file/d/10hgM1DkBld-0gkpOHl3viZGyHUWHLQOQ/view?usp=drive_link)
+
   - Catalog Page: Displays all available campers with filtering options.
-    ![catalog](https://files.fm/f/8w42tqybeu)
+
+    ![catalog](https://drive.google.com/file/d/1H_skK6DIYo7XKVyhOIhbNEtjVv-9TBFC/view?usp=drive_link)
+
   - Favorites Page: Allows users to save campers they love (extra feature).
-    ![favorites](https://files.fm/f/9zynkx4u85)
+
+    ![favorites](https://drive.google.com/file/d/1vrfYeIANJkHjjwcZDcBRHXOEpfF9HYXL/view?usp=drive_link)
+
   - Individual Camper Page: Includes details, a photo gallery, user reviews, and a booking form.
-    ![details](https://files.fm/f/emm7zmwdby)
-    ![reviews](https://files.fm/f/gssg99h39e)
+
+    ![details](https://drive.google.com/file/d/1kP-o02G2d-ncXpm9NToHGvGybbCNVwhH/view?usp=drive_link)
+
+    ![reviews](https://drive.google.com/file/d/1th4tZRnniCBswOtdHZKPFUzwa7QuVlzy/view?usp=drive_link)
 
 API Integration
 The application uses a pre-built backend API available at MockAPI to manage camper listings.
@@ -47,26 +56,8 @@ Main Endpoints
 - react-hot-toast: For displaying notifications upon successful actions like bookings.
 - react-loader-spinner: For showing loading indicators during asynchronous operations.
   Package.json Overview
-  { ///
-  "dependencies": {
-  "@reduxjs/toolkit": "^2.3.0",
-  "axios": "^1.7.7",
-  "framer-motion": "^12.4.7",
-  "modern-normalize": "^3.0.1",
-  "normalize.css": "^8.0.1",
-  "react": "^18.3.1",
-  "react-datepicker": "^7.5.0",
-  "react-dom": "^18.3.1",
-  "react-hot-toast": "^2.4.1",
-  "react-loader-spinner": "^6.1.6",
-  "react-redux": "^9.1.2",
-  "react-router-dom": "^6.27.0",
-  "redux-persist": "^6.0.0",
-  "reselect": "^5.1.1",
-  "styled-components": "^6.1.13",
-  "styled-normalize": "^8.1.1"
-  }, ///
-  }
+
+  ![package-json](https://drive.google.com/file/d/1MppEi-_rox_oDZdHcg3ocYAdhO4w8WZg/view?usp=drive_link)
 
   Functionalities:
 
@@ -95,8 +86,11 @@ Main Endpoints
 - Button Styles: Standardized button designs for actions like "Search" and "Load More."
 - Form Elements: Input fields for user data, including a calendar for date selection and a dropdown for location.
 - Icons: Common icons to represent features like air conditioning, bathroom, kitchen, and more.
-  … Kit
+
+  ![reviews](https://drive.google.com/file/d/1sTK3as_cnqiaCIzxcLcJKWLwp9OxLXg6/view?usp=drive_link)
+
   Links:
+
 - Design mockup: https://www.figma.com/design/6vTbzaB3EPgOreQz2jOJJe/Campers?node-id=0-1&t=wWUj9PeSd7v1KZ5q-1.
 - MockAPI: https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers.
 - Source Code: GitHub Repository https://github.com/dm-zhuk/test-02.
