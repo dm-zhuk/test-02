@@ -83,7 +83,9 @@ const Booking = () => {
           selected={startDate}
           onChange={handleDateChange}
           placeholderText="Booking date*"
-        />
+          calendarStartDay={1}
+          minDate={new Date()}
+    />
         {errors.date && <span className={styles.error}>{errors.date}</span>}
 
         <Textarea
