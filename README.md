@@ -9,21 +9,21 @@ Features:
 
   - Home Page: Features a banner with a primary call to action.
 
-    ![home](https://drive.google.com/file/d/10hgM1DkBld-0gkpOHl3viZGyHUWHLQOQ/view?usp=drive_link)
+    ![home](https://drive.google.com/file/d/1H_skK6DIYo7XKVyhOIhbNEtjVv-9TBFC/view?usp=sharing)
 
   - Catalog Page: Displays all available campers with filtering options.
 
-    ![catalog](https://drive.google.com/file/d/1H_skK6DIYo7XKVyhOIhbNEtjVv-9TBFC/view?usp=drive_link)
+    ![catalog](https://drive.google.com/file/d/1H_skK6DIYo7XKVyhOIhbNEtjVv-9TBFC/view?usp=sharing)
 
   - Favorites Page: Allows users to save campers they love (extra feature).
 
-    ![favorites](https://drive.google.com/file/d/1vrfYeIANJkHjjwcZDcBRHXOEpfF9HYXL/view?usp=drive_link)
+    ![favorites](https://drive.google.com/file/d/1vrfYeIANJkHjjwcZDcBRHXOEpfF9HYXL/view?usp=sharing)
 
   - Individual Camper Page: Includes details, a photo gallery, user reviews, and a booking form.
 
-    ![details](https://drive.google.com/file/d/1kP-o02G2d-ncXpm9NToHGvGybbCNVwhH/view?usp=drive_link)
+    ![details](https://drive.google.com/file/d/1kP-o02G2d-ncXpm9NToHGvGybbCNVwhH/view?usp=sharing)
 
-    ![reviews](https://drive.google.com/file/d/1th4tZRnniCBswOtdHZKPFUzwa7QuVlzy/view?usp=drive_link)
+    ![reviews](https://drive.google.com/file/d/1th4tZRnniCBswOtdHZKPFUzwa7QuVlzy/view?usp=sharing)
 
 API Integration
 The application uses a pre-built backend API available at MockAPI to manage camper listings.
@@ -57,7 +57,7 @@ Main Endpoints
 - react-loader-spinner: For showing loading indicators during asynchronous operations.
   Package.json Overview
 
-  ![package-json](https://drive.google.com/file/d/1MppEi-_rox_oDZdHcg3ocYAdhO4w8WZg/view?usp=drive_link)
+  ![package-json](https://drive.google.com/file/d/1MppEi-_rox_oDZdHcg3ocYAdhO4w8WZg/view?usp=sharing)
 
   Functionalities:
 
@@ -87,7 +87,7 @@ Main Endpoints
 - Form Elements: Input fields for user data, including a calendar for date selection and a dropdown for location.
 - Icons: Common icons to represent features like air conditioning, bathroom, kitchen, and more.
 
-  ![reviews](https://drive.google.com/file/d/1sTK3as_cnqiaCIzxcLcJKWLwp9OxLXg6/view?usp=drive_link)
+  ![ui-kit](https://drive.google.com/file/d/1sTK3as_cnqiaCIzxcLcJKWLwp9OxLXg6/view?usp=sharing)
 
   Links:
 
