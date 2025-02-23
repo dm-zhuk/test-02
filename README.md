@@ -9,7 +9,7 @@ TravelTrucks is the front-end part of a web application designed for the rental 
 - **Multiple Pages**: The application consists of several key pages:
 
   - **Home Page**: Features a banner with a primary call to action.
-    ![home](https://drive.google.com/uc?id=1H_skK6DIYo7XKVyhOIhbNEtjVv-9TBFC)
+    ![home](https://drive.google.com/uc?id=10hgM1DkBld-0gkpOHl3viZGyHUWHLQOQ)
 
   - **Catalog Page**: Displays all available campers with filtering options.
     ![catalog](https://drive.google.com/uc?id=1H_skK6DIYo7XKVyhOIhbNEtjVv-9TBFC)
@@ -62,7 +62,7 @@ The application uses a pre-built backend API available at MockAPI to manage camp
 
 ### Package.json Overview
 
-![package-json](https://drive.google.com/uc?id=1MppEi-_rox_oDZdHcg3ocYAdhO4w8WZg)
+![package-json](https://drive.google.com/uc?id=1NwHFzUj9X-ALWV2yDN401J83camvDl-U)
 
 ## Functionalities:
 
