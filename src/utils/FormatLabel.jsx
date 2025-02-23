@@ -1,4 +1,4 @@
-import { Location } from "../common/components/icons";
+import { Location } from "../common/components/icons/iconsIndex";
 
 export const FormattedLocation = ({ location }) => {
   const formatLocation = (location) => {

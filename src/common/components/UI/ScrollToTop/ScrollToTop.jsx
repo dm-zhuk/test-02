@@ -1,7 +1,7 @@
 import {  createContext, useContext, useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./index.module.css";
-import { ArrowUp } from "../../icons/icons";
+import { ArrowUp } from "../../icons/iconsIndex";
 
 const AppContext = createContext({
   currentPage: 1,

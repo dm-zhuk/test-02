@@ -7,7 +7,7 @@ import Checkbox from "../Buttons/Checkbox";
 import { filterData } from "../../../utils/filterData";
 import { getFilterParams } from "../../../utils/filterParams";
 import { vehicleEquipment, vehicleType } from "../../../utils/filterIcons";
-import { Location } from "../icons";
+import { Location } from "../icons/iconsIndex";
 import styles from "./index.module.css";
 
 const CardFilter = ({ cards, setFilteredCards }) => {

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { CardBadge } from "../CardBadge/CardBadge";
-import { Star } from "../icons";
+import { Star } from "../icons/iconsIndex";
 import { FormattedLocation, formatPrice } from "../../../utils/FormatLabel";
 import FavoriteIcon from "../../../utils/FavoriteIcon";
 import Button from "../Buttons/Button";

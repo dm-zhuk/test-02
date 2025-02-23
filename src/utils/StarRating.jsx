@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Star, StarGray } from "../common/components/icons";
+import { Star, StarGray } from "../common/components/icons/iconsIndex";
 
 const StarRating = ({ reviewer_rating }) => {
   return (

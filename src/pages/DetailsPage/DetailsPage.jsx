@@ -7,7 +7,7 @@ import {
   getIsLoading,
   getError,
 } from "../../store/selectors";
-import { Star } from "../../common/components/icons";
+import { Star } from "../../common/components/icons/iconsIndex";
 import { compileVehicleDetails } from "../../common/components/CardDetails/helper";
 import {CardBadgeSelected}  from "../../common/components/CardBadge/CardBadgeSelected";
 import { placeholderImages } from "../../utils/placeholder";

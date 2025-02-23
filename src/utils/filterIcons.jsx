@@ -14,7 +14,7 @@ import {
   TV,
   Van,
   Water,
-} from "../common/components/icons";
+} from "../common/components/icons/iconsIndex";
 
 export const vehicleEquipment = [
   { name: "AC", label: "AC", icon: <AC /> },
