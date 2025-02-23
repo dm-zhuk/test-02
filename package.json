@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": " https://dm-zhuk.github.io/test-02/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -40,5 +41,17 @@
     "prop-types": "^15.8.1",
     "react-error-boundary": "^4.1.2",
     "vite": "^5.4.8"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
