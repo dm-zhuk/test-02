@@ -49,3 +49,19 @@
   border-radius: 2px;
   background-color: var(--color-btn-hover);
 }
+
+.headerContacts {
+  display: flex;
+  align-items: center;
+}
+
+.headerContactsList {
+  display: flex;
+  gap: 16px;
+}
+
+.headerContactsLink {
+  display: block;
+  padding: 0;
+  font-size: 14px;
+}

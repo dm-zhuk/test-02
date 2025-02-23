@@ -42,6 +42,26 @@ const SharedLayout = () => {
             </ul>
           </nav>
         </div>
+        <div className={styles.headerContacts}>
+            <ul className={styles.headerContactsList}>
+              <li>
+                <a
+                  href="mailto:info@camperrental.com.ua"
+                  className={styles.headerContactsLink}
+                >
+                  info@camperrental.com.ua
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+380637654321"
+                  className={styles.headerContactsLink}
+                >
+                  +380 (63) 765-43-21
+                </a>
+              </li>
+            </ul>
+          </div>
       </header>
       <Outlet />
     </>
