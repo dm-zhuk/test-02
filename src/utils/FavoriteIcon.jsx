@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorite } from "../store/favoritesSlice";
 import { getFavorites } from "../store/selectors";
+import toast from "react-hot-toast";
 
 const FavoriteIcon = ({ item }) => {
   const dispatch = useDispatch();
@@ -11,6 +12,12 @@ const FavoriteIcon = ({ item }) => {
   const handleToggleFavorite = (e) => {
     e.stopPropagation();
     dispatch(toggleFavorite(item.id));
+    
+    if (isFavorited) {
+      toast.error("Camper removed from favorites!");
+    } else {
+      toast.success("Camper added to favorites!");
+    }
   };
 
   return (
