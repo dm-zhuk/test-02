@@ -6,8 +6,8 @@
   "homepage": "https://dm-zhuk.github.io/test-02/",
   "scripts": {
     "dev": "vite",
-    "build:github": "cross-env VITE_DEPLOY_TARGET=github vite build",
-    "build:netlify": "vite build",
+    "build:github": "cross-env VITE_DEPLOY_TARGET=github vite build --mode production",
+    "build:netlify": "vite build --mode production",
     "start": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write ."
