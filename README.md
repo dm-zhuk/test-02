@@ -57,7 +57,7 @@ The application uses a pre-built backend API available at MockAPI to manage camp
 4. **Dependencies**:
    The project utilizes several key libraries to enhance functionality:
    - `react-datepicker`: For selecting dates in the booking form.
-   - `react-hot-toast`: For displaying notifications upon successful actions like bookings.
+   - `react-hot-toast`: For displaying notifications upon successful actions like bookings, filters, favorites applied.
    - `react-loader-spinner`: For showing loading indicators during asynchronous operations.
 
 ### Package.json Overview
