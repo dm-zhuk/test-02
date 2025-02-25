@@ -5,13 +5,13 @@
   "type": "module",
   "homepage": "https://dm-zhuk.github.io/test-02/",
   "scripts": {
-  "dev": "vite",
-  "build:github": "VITE_DEPLOY_TARGET=github vite build",
-  "build:netlify": "vite build",
-  "start": "vite preview",
-  "lint": "eslint .",
-  "format": "prettier --write ."
-},
+    "dev": "vite",
+    "build:github": "cross-env VITE_DEPLOY_TARGET=github vite build",
+    "build:netlify": "vite build",
+    "start": "vite preview",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
     "axios": "^1.7.7",
@@ -32,6 +32,7 @@
     "@eslint/js": "^9.11.1",
     "@svgr/rollup": "^8.1.0",
     "@vitejs/plugin-react": "^4.3.2",
+    "cross-env": "^7.0.3",
     "eslint": "^9.11.1",
     "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
