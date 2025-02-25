@@ -1,10 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import svgr from "@svgr/rollup";
-
 import { resolve } from "path";
 
 const root = resolve("src");
+
+const isGitHubPages = import.meta.env.VITE_DEPLOY_TARGET === "github";
 
 export default defineConfig({
   plugins: [
@@ -13,7 +14,7 @@ export default defineConfig({
       exportAsDefault: true,
     }),
   ],
-  base: "/test-02/",
+  base: isGitHubPages ? "/test-02/" : "/",
   resolve: {
     alias: {
       "~": root,

@@ -5,12 +5,13 @@
   "type": "module",
   "homepage": "https://dm-zhuk.github.io/test-02/",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "start": "vite preview",
-    "lint": "eslint .",
-    "format": "prettier --write ."
-  },
+  "dev": "vite",
+  "build:github": "VITE_DEPLOY_TARGET=github vite build",
+  "build:netlify": "vite build",
+  "start": "vite preview",
+  "lint": "eslint .",
+  "format": "prettier --write ."
+},
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
     "axios": "^1.7.7",
