@@ -120,7 +120,7 @@ const DetailsPage = () => {
           </button>
         </nav>
         <div className={styles.tabContentContainer}>
-          <div className={styles.tabContent}>
+          <div>
             {activeTab === "features" && (
               <div className={styles.features}>
                 <div className={styles.featuresDetails}>

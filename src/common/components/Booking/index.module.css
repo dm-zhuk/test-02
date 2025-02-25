@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 641px;
   gap: 24px;
   height: fit-content;
   border: 1px solid var(--color-border);
