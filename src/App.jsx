@@ -4,7 +4,6 @@ import { Toaster } from "react-hot-toast";
 import Loader from "./common/components/UI/Loader/Loader";
 import NotFound from "./pages/NotFound";
 import SharedLayout from "./common/components/layouts/SharedLayout";
-import { Analytics } from '@vercel/analytics/react';
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage"));
@@ -23,6 +22,5 @@ export const App = () => (
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
-    <Analytics />
   </Suspense>
 );
