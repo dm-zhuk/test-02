@@ -4,18 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://dm-zhuk.github.io/test-02/",
- "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "start": "vite preview",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist",
-  "lint": "eslint .",
-  "format": "prettier --write ."
-},
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
-    "@vercel/static-build": "^2.7.0",
     "axios": "^1.7.7",
     "framer-motion": "^12.4.7",
     "modern-normalize": "^3.0.1",
