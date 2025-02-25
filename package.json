@@ -9,6 +9,7 @@
     "build:github": "cross-env VITE_DEPLOY_TARGET=github vite build --mode production",
     "build:netlify": "vite build --mode production",
     "start": "vite preview",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
