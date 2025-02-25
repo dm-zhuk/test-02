@@ -1,5 +1,4 @@
-@import-normalize;
-@modern-normalize;
+@import '@modern-normalize/modern-normalize.css';
 
 #root {
   width: 100%;
@@ -68,7 +67,7 @@ h3 {
 picture,
 img {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
   object-fit: cover;
   object-position: center;
@@ -118,4 +117,5 @@ a {
 
 a:hover {
   transform: scale(1.03);
+  transition: transform var(--trans);
 }
