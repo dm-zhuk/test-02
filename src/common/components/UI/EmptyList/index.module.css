@@ -26,8 +26,8 @@
     object-fit: cover;
     flex-shrink: 0;
     border-radius: 16px;
-    transform: scale(1.1);
-    transition: transform 0.5s ease-in-out;
+    transform: scale(1.1) 0.5s ease-in-out;
+    transition: var(--trans);
 }
 
 .imageContainer:hover {

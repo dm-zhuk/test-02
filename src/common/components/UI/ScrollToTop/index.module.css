@@ -1,7 +1,11 @@
-.buttonScroll {
+.scrollToTop {
     position: fixed;
-    bottom: 50px;
-    right: 30px;
+    bottom: 40px;
+    right: 20px;
+    transition: var(--trans);
+}
+
+.buttonScroll {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,4 +19,8 @@
     box-shadow: 0 2px 5px var(--shadow-gray);
     cursor: pointer;
     z-index: 99;
+}
+
+.buttonScroll:hover {
+    transform: scale(1.05);
 }

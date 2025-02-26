@@ -1,5 +1,4 @@
-import {  createContext, useContext, useState, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { createContext, useContext, useState, useEffect } from "react";
 import styles from "./index.module.css";
 import { ArrowUp } from "../../icons/iconsIndex";
 
@@ -10,21 +9,11 @@ const AppContext = createContext({
 });
 
 const ScrollToTop = () => {
-  const [isBtnVisible, setisBtnVisible] = useState(false);
-  const [jump, setJump] = useState(false);
+  const [isBtnVisible, setIsBtnVisible] = useState(false);
   const { isModalShown } = useContext(AppContext);
 
   const toggleVisibility = () => {
-    if (window.scrollY > 300) {
-      setisBtnVisible(true);
-    } else {
-      setisBtnVisible(false);
-    }
-  };
-
-  const handleHover = () => {
-    setJump(true);
-    setTimeout(() => setJump(false), 500);
+    setIsBtnVisible(window.scrollY > 300);
   };
 
   const scrollToTop = () => {
@@ -34,10 +23,6 @@ const ScrollToTop = () => {
     });
   };
 
-  const jumpAnimation = jump
-    ? { y: [0, -10, 0], duration: 0.5, opacity: 1 }
-    : { opacity: 1 };
-
   useEffect(() => {
     window.addEventListener("scroll", toggleVisibility);
     return () => {
@@ -46,21 +31,15 @@ const ScrollToTop = () => {
   }, []);
 
   return (
-    <div className="scroll-to-top">
-      <AnimatePresence>
-        {isBtnVisible && !isModalShown && (
-          <motion.button
-            initial={{ opacity: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            animate={jumpAnimation}
-            onClick={scrollToTop}
-            onMouseEnter={handleHover}
-            className={styles.buttonScroll}>
-            <ArrowUp/>
-          </motion.button>
-        )}
-      </AnimatePresence>
+    <div className={styles.scrollToTop}>
+      {isBtnVisible && !isModalShown && (
+        <button
+          onClick={scrollToTop}
+          className={styles.buttonScroll}
+        >
+          <ArrowUp />
+        </button>
+      )}
     </div>
   );
 };
