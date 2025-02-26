@@ -7,7 +7,6 @@ import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "./utils/Fallback";
 import { persistor, store } from "./store/store";
 import { PaginationProvider } from "./utils/context";
-import { Normalize } from "styled-normalize";
 import { App } from "./App";
 import "./index.css";
 
@@ -20,7 +19,6 @@ root.render(
       <PersistGate loading={null} persistor={persistor}>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <PaginationProvider>
-            <Normalize />
             <React.Suspense fallback={<div>Loading...</div>}>
               <App />
             </React.Suspense>

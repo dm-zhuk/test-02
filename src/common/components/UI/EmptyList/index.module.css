@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     min-width: 888px;
-    gap: 32px;
+    gap: 42px;
 }
 
 .title {
@@ -13,17 +14,24 @@
 }
 
 .noItemsText {
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
 }
 
 .imageContainer {
-    width: 600px;
+    width: 100%;
+    max-width: 520px;
     height: auto;
     overflow: hidden;
     object-fit: cover;
     flex-shrink: 0;
     border-radius: 16px;
+    transform: scale(1.1);
+    transition: transform 0.5s ease-in-out;
+}
+
+.imageContainer:hover {
+    transform: scale(1);
 }
 
 .message {

@@ -14,10 +14,14 @@ const FavoriteIcon = ({ item }) => {
     dispatch(toggleFavorite(item.id));
     
     if (isFavorited) {
-      toast.error("Camper removed from favorites!");
-    } else {
-      toast.success("Camper added to favorites!");
-    }
+  toast.error("Camper removed from favorites!", {
+    duration: 700,
+  });
+} else {
+  toast.success("Camper added to favorites!", {
+    duration: 900,
+  });
+}
   };
 
   return (
