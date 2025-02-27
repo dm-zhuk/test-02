@@ -10,7 +10,7 @@ export const fetchData = createAsyncThunk(
       try {
         const data = await fetchApi.getData();
         const matchesCount = data.items.length;
-        toast.success(`🚐 ${matchesCount} match${matchesCount > 1 ? "es" : ""} retrieved`);
+        toast.success(`🚐 ${matchesCount} camper${matchesCount > 1 ? "s" : ""} available`);
         return data;
       } catch (error) {
         toast.error("Failed to fetch campers data.");
