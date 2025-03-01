@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import toast from "react-hot-toast";
 import { fetchApi } from "../api/apiService";
+import toast from "react-hot-toast";
 
 export const fetchData = createAsyncThunk(
   "fetchAll",
