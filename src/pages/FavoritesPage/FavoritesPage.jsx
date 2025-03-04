@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import CardFilter from "../../common/components/CardFilter/CardFilter";
-import CardCatalog from "../../common/components/CardContent/CardCatalog";
+import CardFiltered from "../../common/components/CardContent/CardFiltered";
 import { getCampers, getFavorites } from "../../store/selectors";
 import { scrollTo } from "../../utils/scroller";
 import Pagination from "../../utils/context";
@@ -42,7 +42,7 @@ const FavoritesPage = () => {
           <div className={styles.contentWrapper}>
             <CardFilter cards={filteredCampers} setFilteredCards={setFilteredCampers} />
             {filteredCampers.length > 0 ? (
-              <CardCatalog data={cards} listRef={listRef} />
+              <CardFiltered data={cards} listRef={listRef} />
             ) : (
               <EmptyList />
             )}

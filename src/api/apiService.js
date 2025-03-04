@@ -1,53 +1,33 @@
-import axios from "axios";
+import axios from 'axios';
 
-const BASE_URL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers";
+const BASE_URL = 'https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers';
 
-export const fetchData = async (path, method = "GET", body = null) => {
+const fetchData = async (url, method = 'GET', body = null) => {
   try {
     const options = {
-      url: path,
+      url,
       method,
-      headers: { "Content-type": "application/json" },
+      headers: { 'Content-Type': 'application/json' },
       data: body,
     };
-    const response = await axios(options);
-    return response.data;
+    const { data } = await axios(options);
+    return data;
   } catch (error) {
-    if (error.response) {
-      throw new Error(
-        `Error: status: ${error.response.status}, ${error.response.statusText}`
-      );
-    } else {
-      throw new Error(`Error: ${error.message}`);
-    }
+    const errorMessage = error.response
+      ? `Error: status: ${error.response.status}, ${error.response.statusText}`
+      : `Error: ${error.message}`;
+    throw new Error(errorMessage);
   }
 };
 
 export const fetchApi = {
-  async getData(dataParams) {
+  getData: dataParams => {
     const params = new URLSearchParams(dataParams).toString();
-    const url = `${BASE_URL}/?${params}`;
-    return await fetchData(url);
+    return fetchData(`${BASE_URL}/?${params}`);
   },
-  async getCamperById(id) {
-    const url = `${BASE_URL}/${id}`;
-    return await fetchData(url);
-  },
-  async createData(dataBody) {
-    const method = "POST";
-    const url = `${BASE_URL}`;
-    const body = JSON.stringify(dataBody);
-    return await fetchData(url, method, body);
-  },
-  async updateData(id, dataBody) {
-    const method = "PUT";
-    const url = `${BASE_URL}/${id}`;
-    const body = JSON.stringify(dataBody);
-    return await fetchData(url, method, body);
-  },
-  async deleteData(id) {
-    const method = "DELETE";
-    const url = `${BASE_URL}/${id}`;
-    return await fetchData(url, method);
-  },
+  getCamperById: id => fetchData(`${BASE_URL}/${id}`),
+  createData: dataBody => fetchData(BASE_URL, 'POST', JSON.stringify(dataBody)),
+  updateData: (id, dataBody) =>
+    fetchData(`${BASE_URL}/${id}`, 'PUT', JSON.stringify(dataBody)),
+  deleteData: id => fetchData(`${BASE_URL}/${id}`, 'DELETE'),
 };

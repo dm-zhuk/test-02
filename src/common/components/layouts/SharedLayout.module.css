@@ -1,9 +1,6 @@
 .header {
   position: fixed;
   z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
   padding: 24px 64px;
   border-bottom: 1px solid var(--color-badge);
@@ -11,7 +8,13 @@
   box-shadow: 0 2px 4px var(--shadow-gray);
 }
 
-.header > svg {
+.contentWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header>svg {
   flex-shrink: 0;
 }
 
@@ -74,7 +77,7 @@
 }
 
 @media (max-width: 425px) {
-  .header > a > svg {
+  .header>a>svg {
     display: none !important;
   }
 }

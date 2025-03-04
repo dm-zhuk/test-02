@@ -33,7 +33,7 @@ const EmptyList = () => {
               Keep clicking the hearts to review your favorite campervans later on
             </p>
           </div>
-          <Button text="↩︎  to catalog" onClick={handleClick} style={{ padding: "16px 4px" }} />
+          <Button text="Back to catalog" onClick={handleClick} style={{ padding: "16px 4px" }} />
         </>
       )}
     </div>

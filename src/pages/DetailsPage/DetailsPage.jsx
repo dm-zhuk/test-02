@@ -52,7 +52,7 @@ const DetailsPage = () => {
 
   return (
     <div className={styles.selectedContainer}>
-      <section className={styles.itemWrapper} key={selectedCamper.id}>
+      <section key={selectedCamper.id}>
         <div className={styles.titleWrapper}>
           <h2>{selectedCamper.name}</h2>
           <div className={styles.itemsSubtitle}>

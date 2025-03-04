@@ -3,7 +3,7 @@ import CardContent from "./CardContent";
 import ScrollToTop from '../UI/ScrollToTop/ScrollToTop';
 import styles from "./index.module.css";
 
-const CardCatalog = ({ data = [], listRef }) => {
+const CardFiltered = ({ data = [], listRef }) => {
   return (
     <ul className={styles.catalogContainer} ref={listRef}>
       {data.length > 0 ? (
@@ -18,9 +18,9 @@ const CardCatalog = ({ data = [], listRef }) => {
   );
 };
 
-CardCatalog.propTypes = {
+CardFiltered.propTypes = {
   data: PropTypes.array.isRequired,
   listRef: PropTypes.object,
 };
 
-export default CardCatalog;
+export default CardFiltered;

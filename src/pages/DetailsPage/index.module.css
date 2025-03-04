@@ -1,12 +1,10 @@
 .selectedContainer {
-    width: 100%;
-    margin: 0;
-    padding: 120px 64px 80px;
-}
-
-.itemWrapper {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 120px 64px 80px;
 }
 
 .titleWrapper {
@@ -53,10 +51,11 @@
 .gallery {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     flex-wrap: wrap;
+    align-items: flex-start;
     margin: 28px 0;
-    gap: 48px;
+    max-width: 100%;
+    gap: 24px;
 }
 
 .imageContainer {
@@ -127,9 +126,11 @@
 
 .tabContentContainer {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
     gap: 40px;
 }
 
@@ -188,14 +189,13 @@
 
 .reviews {
     display: flex;
-    width: 631px;
+    max-width: 631px;
     flex-direction: column;
     align-items: flex-start;
     gap: 44px;
 }
 
 .review {
-    width: 631px;
     color: var(--color-text);
     border-radius: 8px;
 }
@@ -228,4 +228,19 @@
 .reviewRating {
     color: var(--color-btn);
     font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .selectedContainer {
+        padding: 60px 32px;
+    }
+
+    .gallery {
+        gap: 24px;
+    }
+
+    .tabContentContainer {
+        flex-wrap: wrap;
+    }
+
 }

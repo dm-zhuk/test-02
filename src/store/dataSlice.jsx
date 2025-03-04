@@ -1,34 +1,30 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchApi } from "../api/apiService";
+import { fetchApi } from "../api//apiService";
 import toast from "react-hot-toast";
 
 export const fetchData = createAsyncThunk(
-  "fetchAll",
-  async (_, { getState }) => {
-    const state = getState();
-    if (state.data.campers.length === 0) {
-      try {
-        const data = await fetchApi.getData();
-        const matchesCount = data.items.length;
-        toast.success(`🚐 ${matchesCount} camper${matchesCount > 1 ? "s" : ""} available`);
-        return data;
-      } catch (error) {
-        toast.error("Failed to fetch campers data.");
-        throw error;
-      }
+  "data/fetchAll",
+  async (_, { getState, rejectWithValue }) => {
+    const { campers } = getState().data;
+    if (campers.length > 0) return [];
+
+    try {
+      const data = await fetchApi.getData();
+      toast.success(`🚐 ${data.items.length} camper${data.items.length > 1 ? "s" : ""} available`);
+      return data.items;
+    } catch {
+      toast.error("Failed to fetch campers data.");
+      return rejectWithValue("Failed to fetch campers data.");
     }
-    return [];
   }
 );
 
 export const fetchCamperDetails = createAsyncThunk(
-  "fetchCamperDetails",
+  "data/fetchCamperDetails",
   async (camperId, { rejectWithValue }) => {
     try {
       const camperDetails = await fetchApi.getCamperById(camperId);
-      if (!camperDetails) {
-        throw new Error("Camper details not found");
-      }
+      if (!camperDetails) throw new Error("Camper details not found");
       return camperDetails;
     } catch (error) {
       toast.error("Failed to fetch camper details.");
@@ -59,12 +55,12 @@ const dataSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchData.fulfilled, (state, action) => {
-        state.campers = action.payload.items;
+        state.campers = action.payload;
         state.isLoading = false;
       })
       .addCase(fetchData.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.error.message;
+        state.error = action.payload || action.error.message;
       })
       .addCase(fetchCamperDetails.pending, (state) => {
         state.isLoading = true;
@@ -78,7 +74,7 @@ const dataSlice = createSlice({
       .addCase(fetchCamperDetails.rejected, (state, action) => {
         state.error = action.payload || "Failed to load camper details";
         state.isLoading = false;
-      })
+      });
   },
 });
 

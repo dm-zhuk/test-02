@@ -3,6 +3,7 @@
   flex-direction: column;
 
   textarea {
+    font-family: Inter, sans-serif;
     margin-bottom: 4px;
   }
 

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CardFilter from "../../common/components/CardFilter/CardFilter";
-import CardCatalog from "../../common/components/CardContent/CardCatalog";
+import CardFiltered from "../../common/components/CardContent/CardFiltered";
 import { fetchData } from "../../store/dataSlice";
 import { getCampers } from "../../store/selectors";
 import { scrollTo } from "../../utils/scroller";
@@ -45,7 +45,7 @@ const CatalogPage = () => {
         <div className={styles.pageContainer}>
           <div className={styles.contentWrapper}>
             <CardFilter cards={campers} setFilteredCards={setFilteredCampers} />
-            <CardCatalog data={cards} listRef={listRef} />
+            <CardFiltered data={cards} listRef={listRef} />
           </div>
           {isBtnVisible && (
             <Button
