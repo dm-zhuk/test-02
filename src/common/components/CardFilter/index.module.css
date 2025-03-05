@@ -32,8 +32,13 @@
 }
 
 .cityInput {
-  border: none;
+  flex: 1;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
   line-height: 1.5;
+  border: none;
   background: var(--color-input);
   padding-left: 28px;
 }

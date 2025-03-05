@@ -11,7 +11,7 @@
   gap: 9px;
   margin-top: 24px;
   padding-top: 24px;
-  border-top: 1px solid rgba(16, 24, 40, 0.1);
+  border-top: 1px solid var(--color-light-gray);
 }
 
 .detailTitle::first-letter,
@@ -41,7 +41,7 @@
   border: none;
   cursor: pointer;
   border-bottom: 6px solid transparent;
-  transition: border-bottom 0.3s;
+  transition: border-bottom var(--trans);
 }
 
 .active {

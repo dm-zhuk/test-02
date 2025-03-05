@@ -1,23 +1,23 @@
-import { useContext } from "react";
-import toast from "react-hot-toast";
-import Pagination from "../../../utils/context";
-import Button from "../Buttons/Button";
-import RadioButton from "../Buttons/RadioButton";
-import Checkbox from "../Buttons/Checkbox";
-import { filterData } from "../../../utils/filterData";
-import { getFilterParams } from "../../../utils/filterParams";
-import { vehicleEquipment, vehicleType } from "../../../utils/filterIcons";
-import { Location } from "../icons/iconsIndex";
-import styles from "./index.module.css";
+import { useContext } from 'react';
+import toast from 'react-hot-toast';
+import Pagination from '../../../utils/context';
+import Button from '../Buttons/Button';
+import RadioButton from '../Buttons/RadioButton';
+import Checkbox from '../Buttons/Checkbox';
+import { filterData } from '../../../utils/filterData';
+import { getFilterParams } from '../../../utils/filterParams';
+import { vehicleEquipment, vehicleType } from '../../../utils/filterIcons';
+import { Location } from '../icons/iconsIndex';
+import styles from './index.module.css';
 
 const CardFilter = ({ cards, setFilteredCards }) => {
   const { resetPage } = useContext(Pagination);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     const filterParams = getFilterParams(e.target);
     let filteredData = filterData(cards, filterParams);
-    
+
     resetPage();
 
     setFilteredCards(filteredData);
@@ -25,16 +25,18 @@ const CardFilter = ({ cards, setFilteredCards }) => {
     const matchesCount = filteredData.length;
     if (matchesCount > 0) {
       toast.success(
-        `${matchesCount} match${matchesCount > 1 ? "es" : ""} found for your selection`
+        `${matchesCount} match${
+          matchesCount > 1 ? 'es' : ''
+        } found for your selection`
       );
     } else {
-      toast.error("No matches for your selection");
+      toast.error('No matches for your selection');
     }
 
     resetFilterParams(e.target);
   };
 
-  const resetFilterParams = (form) => {
+  const resetFilterParams = form => {
     form.reset();
   };
 

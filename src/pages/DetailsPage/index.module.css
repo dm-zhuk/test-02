@@ -187,6 +187,12 @@
     align-self: stretch;
 }
 
+.detail {
+    background: var(--color-input);
+    box-shadow: 0 0.5px 2px var(--shadow-li);
+    transition: box-shadow var(--trans);
+}
+
 .reviews {
     display: flex;
     max-width: 631px;

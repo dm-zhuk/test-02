@@ -1,52 +1,56 @@
-import { useState } from "react";
-import toast from "react-hot-toast";
-import { validateForm } from "../../../utils/validator";
-import { Input } from "../UI/Input/Input";
-import { Textarea } from "../UI/Textarea/Textarea";
-import Button from "../Buttons/Button";
-import styles from "./index.module.css";
+import { useState } from 'react';
+import toast from 'react-hot-toast';
+import { validateForm } from '../../../utils/validator';
+import { Input } from '../UI/Input/Input';
+import { Textarea } from '../UI/Textarea/Textarea';
+import Button from '../Buttons/Button';
+import styles from './index.module.css';
 import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
+import 'react-datepicker/dist/react-datepicker.css';
 
 const Booking = () => {
   const [errors, setErrors] = useState({});
   const [startDate, setStartDate] = useState(null);
   const [data, setData] = useState({
-    name: "",
-    email: "",
+    name: '',
+    email: '',
     date: null,
-    comment: "",
+    comment: '',
   });
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     const { name, value } = e.target;
-    setData((prev) => ({
+    setData(prev => ({
       ...prev,
       [name]: value,
     }));
   };
 
-  const handleDateChange = (date) => {
+  const handleDateChange = date => {
     setStartDate(date);
-    setData((prev) => ({
+    setData(prev => ({
       ...prev,
       date: date,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     const validationErrors = validateForm(data);
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      toast.success("Thank you for booking! We'll contact you soon.");
+      toast.success("Thank you for booking! We'll contact you soon.", {
+        position: 'bottom-right',
+        reverseOrder: false,
+        duration: 3600,
+      });
 
       setData({
-        name: "",
-        email: "",
+        name: '',
+        email: '',
         date: null,
-        comment: "",
+        comment: '',
       });
       setStartDate(null);
     }
@@ -85,7 +89,7 @@ const Booking = () => {
           placeholderText="Booking date*"
           calendarStartDay={1}
           minDate={new Date()}
-    />
+        />
         {errors.date && <span className={styles.error}>{errors.date}</span>}
 
         <Textarea
@@ -96,7 +100,7 @@ const Booking = () => {
           rows={4}
         />
 
-        <Button text="Send" type="submit" style={{ marginTop: "10px" }} />
+        <Button text="Send" type="submit" style={{ marginTop: '10px' }} />
       </form>
     </div>
   );

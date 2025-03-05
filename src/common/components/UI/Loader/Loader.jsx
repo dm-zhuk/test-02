@@ -1,5 +1,5 @@
-import { Grid } from "react-loader-spinner";
-import styles from "./index.module.css";
+import { Grid } from 'react-loader-spinner';
+import styles from './index.module.css';
 
 const Loader = ({ isLoading = false }) => {
   if (!isLoading) {
@@ -11,7 +11,7 @@ const Loader = ({ isLoading = false }) => {
         visible={true}
         height={80}
         width={80}
-        color="#e44848"
+        color="var(--color-btn)"
         aria-label="grid-loading"
         radius={12.5}
         wrapperStyle={{}}

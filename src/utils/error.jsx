@@ -1,7 +1,11 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 const ErrorHandle = ({ error }) => {
-  const errorStyle = { padding: "24px 0", fontSize: "24px", color: "red" };
+  const errorStyle = {
+    padding: '24px 0',
+    fontSize: '24px',
+    color: 'var(--color-btn)',
+  };
 
   return <>{error && <div style={errorStyle}>{error}</div>}</>;
 };

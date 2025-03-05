@@ -27,7 +27,9 @@
   --color-label: rgba(16, 24, 40, 0.6);
 
   --color-border: rgba(16, 24, 40, 0.2);
+  --color-line: rgba(16, 24, 40, 0.1);
   --shadow-gray: rgba(0, 0, 0, 0.24);
+  --shadow-li: rgba(0, 0, 0, 0.1);
 
   --trans: 0.3s ease-in-out;
 }

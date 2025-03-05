@@ -1,28 +1,28 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { fetchCamperDetails, clearSelectedCamper } from "../../store/dataSlice";
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { fetchCamperDetails, clearSelectedCamper } from '../../store/dataSlice';
 import {
   getSelectedCamper,
   getIsLoading,
   getError,
-} from "../../store/selectors";
-import { Star } from "../../common/components/icons/iconsIndex";
-import { compileVehicleDetails } from "../../common/components/CardDetails/helper";
-import {CardBadgeSelected}  from "../../common/components/CardBadge/CardBadgeSelected";
-import { placeholderImages } from "../../utils/placeholder";
-import StarRating from "../../utils/StarRating";
-import Booking from "../../common/components/Booking/Booking";
-import Loader from "../../common/components/UI/Loader/Loader";
-import { FormattedLocation, formatPrice } from "../../utils/FormatLabel";
-import ErrorHandle from "../../utils/error";
-import styles from "./index.module.css";
+} from '../../store/selectors';
+import { Star } from '../../common/components/icons/iconsIndex';
+import { compileVehicleDetails } from '../../common/components/CardDetails/helper';
+import { CardBadgeSelected } from '../../common/components/CardBadge/CardBadgeSelected';
+import { placeholderImages } from '../../utils/placeholder';
+import StarRating from '../../utils/StarRating';
+import Booking from '../../common/components/Booking/Booking';
+import Loader from '../../common/components/UI/Loader/Loader';
+import { FormattedLocation, formatPrice } from '../../utils/FormatLabel';
+import ErrorHandle from '../../utils/error';
+import styles from './index.module.css';
 
 const DetailsPage = () => {
-  const [activeTab, setActiveTab] = useState("features");
+  const [activeTab, setActiveTab] = useState('features');
 
   const handleRatingClick = () => {
-    setActiveTab("reviews");
+    setActiveTab('reviews');
   };
 
   const { id } = useParams();
@@ -88,7 +88,8 @@ const DetailsPage = () => {
                     (_, index) => (
                       <div
                         key={`placeholder-${index}`}
-                        className={styles.imageContainer}>
+                        className={styles.imageContainer}
+                      >
                         <img
                           src={placeholderImages[index]}
                           alt={`placeholder ${index + 1}`}
@@ -106,22 +107,24 @@ const DetailsPage = () => {
         <nav className={styles.tabs}>
           <button
             className={`${styles.tab} ${
-              activeTab === "features" ? styles.active : ""
+              activeTab === 'features' ? styles.active : ''
             }`}
-            onClick={() => setActiveTab("features")}>
+            onClick={() => setActiveTab('features')}
+          >
             Features
           </button>
           <button
             className={`${styles.tab} ${
-              activeTab === "reviews" ? styles.active : ""
+              activeTab === 'reviews' ? styles.active : ''
             }`}
-            onClick={() => setActiveTab("reviews")}>
+            onClick={() => setActiveTab('reviews')}
+          >
             Reviews
           </button>
         </nav>
         <div className={styles.tabContentContainer}>
           <div>
-            {activeTab === "features" && (
+            {activeTab === 'features' && (
               <div className={styles.features}>
                 <div className={styles.featuresDetails}>
                   <ul className={styles.featuresList}>
@@ -135,20 +138,16 @@ const DetailsPage = () => {
                   <h3>Vehicle details</h3>
                   <ul className={styles.detailsList}>
                     {detailedInfo.map((detail, index) => (
-                      <li key={index}>
-                        <span className={styles.detailTitle}>
-                          {detail.name}
-                        </span>
-                        <span className={styles.detailValue}>
-                          {detail.value}
-                        </span>
+                      <li key={index} className={styles.detail}>
+                        <span>{detail.name}</span>
+                        <span>{detail.value}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
             )}
-            {activeTab === "reviews" && (
+            {activeTab === 'reviews' && (
               <div className={styles.reviews}>
                 {selectedCamper.reviews.map((review, idx) => (
                   <div key={idx} className={styles.review}>
