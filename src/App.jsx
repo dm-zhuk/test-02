@@ -12,7 +12,7 @@ const FavoritesPage = lazy(() => import('./pages/FavoritesPage/FavoritesPage'));
 
 export const App = () => (
   <Suspense fallback={<Loader isLoading={true} />}>
-    <Toaster position="bottom-left" reverseOrder={false} duration="3600" />
+    <Toaster position="top-center" reverseOrder={false} duration="3600" />
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<HomePage />} />
