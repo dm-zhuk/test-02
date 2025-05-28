@@ -40,12 +40,12 @@ camper listings.
 
 1. **Frameworks and Libraries**:
 
-   - Vite: Used as the bundler for a fast development experience.
-   - React: For building the user interface.
-   - Redux: Manages the application state.
-   - React Router: Handles routing between pages.
-   - Axios: For making API requests.
-   - CSS Modules: For styling components.
+   - **Vite**: Used as the bundler for a fast development experience.
+   - **React**: For building the user interface.
+   - **Redux**: Manages the application state.
+   - **React Router**: Handles routing between pages.
+   - **Axios**: For making API requests.
+   - **CSS Modules**: For styling components.
 
 2. **Routing**:
 
