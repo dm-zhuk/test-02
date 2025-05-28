@@ -70,9 +70,124 @@ camper listings.
    - `react-loader-spinner`: For showing loading indicators during asynchronous
      operations.
 
-### Package.json Overview
+### Project Structure Overview
 
-![package-json](https://drive.google.com/uc?id=1NwHFzUj9X-ALWV2yDN401J83camvDl-U)
+```├── README.md
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── public/
+├── src
+│   ├── App.jsx
+│   ├── api
+│   │   └── apiService.js
+│   ├── common
+│   │   └── components
+│   │       ├── Booking
+│   │       │   ├── Booking.jsx
+│   │       │   └── index.module.css
+│   │       ├── Buttons
+│   │       │   ├── Button.jsx
+│   │       │   ├── Button.module.css
+│   │       │   ├── Checkbox.jsx
+│   │       │   └── RadioButton.jsx
+│   │       ├── CardBadge
+│   │       │   ├── CardBadge.jsx
+│   │       │   ├── CardBadgeSelected.jsx
+│   │       │   └── index.module.css
+│   │       ├── CardContent
+│   │       │   ├── CardContent.jsx
+│   │       │   ├── CardFiltered.jsx
+│   │       │   └── index.module.css
+│   │       ├── CardDetails
+│   │       │   ├── helper.js
+│   │       │   └── index.module.css
+│   │       ├── CardFilter
+│   │       │   ├── CardFilter.jsx
+│   │       │   └── index.module.css
+│   │       ├── UI
+│   │       │   ├── EmptyList
+│   │       │   │   ├── EmptyList.jsx
+│   │       │   │   └── index.module.css
+│   │       │   ├── Input
+│   │       │   │   ├── Input.jsx
+│   │       │   │   └── index.module.css
+│   │       │   ├── Loader
+│   │       │   │   ├── Loader.jsx
+│   │       │   │   └── index.module.css
+│   │       │   ├── ScrollToTop
+│   │       │   │   ├── ScrollToTop.jsx
+│   │       │   │   └── index.module.css
+│   │       │   └── Textarea
+│   │       │       ├── Textarea.jsx
+│   │       │       └── index.module.css
+│   │       ├── icons
+│   │       │   ├── AC.svg
+│   │       │   ├── Alcove.svg
+│   │       │   ├── ArrowUp.svg
+│   │       │   ├── Automatic.svg
+│   │       │   ├── Bathroom.svg
+│   │       │   ├── Fridge.svg
+│   │       │   ├── FullyIntegrated.svg
+│   │       │   ├── Gas.svg
+│   │       │   ├── Kitchen.svg
+│   │       │   ├── Location.svg
+│   │       │   ├── Logo.svg
+│   │       │   ├── Microwave.svg
+│   │       │   ├── Petrol.svg
+│   │       │   ├── Radio.svg
+│   │       │   ├── Star.svg
+│   │       │   ├── StarGray.svg
+│   │       │   ├── TV.svg
+│   │       │   ├── Van.svg
+│   │       │   ├── Water.svg
+│   │       │   ├── icons.jsx
+│   │       │   └── iconsIndex.js
+│   │       ├── img
+│   │       │   ├── Emptic.jpg
+│   │       │   ├── Hero_2x_squooshed.webp
+│   │       │   └── favicon.png
+│   │       └── layouts
+│   │           ├── SharedLayout.jsx
+│   │           └── SharedLayout.module.css
+│   ├── index.css
+│   ├── main.jsx
+│   ├── pages
+│   │   ├── CamperListPage.jsx
+│   │   ├── CatalogPage
+│   │   │   ├── CatalogPage.jsx
+│   │   │   └── index.module.css
+│   │   ├── DetailsPage
+│   │   │   ├── DetailsPage.jsx
+│   │   │   └── index.module.css
+│   │   ├── FavoritesPage
+│   │   │   └── FavoritesPage.jsx
+│   │   ├── HomePage
+│   │   │   ├── HomePage.jsx
+│   │   │   └── index.module.css
+│   │   └── NotFound.jsx
+│   ├── store
+│   │   ├── dataSlice.jsx
+│   │   ├── favoritesSlice.jsx
+│   │   ├── reducer.jsx
+│   │   ├── selectors.jsx
+│   │   └── store.jsx
+│   └── utils
+│       ├── Fallback.jsx
+│       ├── FavoriteIcon.jsx
+│       ├── FormatLabel.jsx
+│       ├── StarRating.jsx
+│       ├── context.jsx
+│       ├── error.jsx
+│       ├── filterData.jsx
+│       ├── filterIcons.jsx
+│       ├── filterParams.jsx
+│       ├── pagination.jsx
+│       ├── placeholder.jsx
+│       ├── scroller.jsx
+│       └── validator.js
+└── vite.config.js```
 
 ## Functionalities:
 
