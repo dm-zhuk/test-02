@@ -1,34 +1,41 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchApi } from "../api//apiService";
-import toast from "react-hot-toast";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { fetchApi } from '../api/apiService';
+import toast from 'react-hot-toast';
+
+const handleFetchError = error => {
+  toast.error('Failed to fetch data.');
+  return error.response?.data || error.message;
+};
 
 export const fetchData = createAsyncThunk(
-  "data/fetchAll",
+  'data/fetchAll',
   async (_, { getState, rejectWithValue }) => {
     const { campers } = getState().data;
     if (campers.length > 0) return [];
 
     try {
       const data = await fetchApi.getData();
-      toast.success(`🚐 ${data.items.length} camper${data.items.length > 1 ? "s" : ""} available`);
+      toast.success(
+        `🚐 ${data.items.length} camper${
+          data.items.length > 1 ? 's' : ''
+        } available`
+      );
       return data.items;
-    } catch {
-      toast.error("Failed to fetch campers data.");
-      return rejectWithValue("Failed to fetch campers data.");
+    } catch (error) {
+      return rejectWithValue(handleFetchError(error));
     }
   }
 );
 
 export const fetchCamperDetails = createAsyncThunk(
-  "data/fetchCamperDetails",
+  'data/fetchCamperDetails',
   async (camperId, { rejectWithValue }) => {
     try {
       const camperDetails = await fetchApi.getCamperById(camperId);
-      if (!camperDetails) throw new Error("Camper details not found");
+      if (!camperDetails) throw new Error('Camper details not found');
       return camperDetails;
     } catch (error) {
-      toast.error("Failed to fetch camper details.");
-      return rejectWithValue(error.response?.data || error.message);
+      return rejectWithValue(handleFetchError(error));
     }
   }
 );
@@ -41,40 +48,40 @@ const initialState = {
 };
 
 const dataSlice = createSlice({
-  name: "data",
+  name: 'data',
   initialState,
   reducers: {
-    clearSelectedCamper: (state) => {
+    clearSelectedCamper: state => {
       state.selectedCamper = null;
     },
   },
-  extraReducers: (builder) => {
+  extraReducers: builder => {
+    const handlePending = state => {
+      state.isLoading = true;
+      state.error = null;
+    };
+
+    const handleFulfilled = (state, action, key) => {
+      state[key] = action.payload;
+      state.isLoading = false;
+    };
+
+    const handleRejected = (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload || 'An error occurred';
+    };
+
     builder
-      .addCase(fetchData.pending, (state) => {
-        state.isLoading = true;
-        state.error = null;
-      })
-      .addCase(fetchData.fulfilled, (state, action) => {
-        state.campers = action.payload;
-        state.isLoading = false;
-      })
-      .addCase(fetchData.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload || action.error.message;
-      })
-      .addCase(fetchCamperDetails.pending, (state) => {
-        state.isLoading = true;
-        state.error = null;
-        state.selectedCamper = null;
-      })
-      .addCase(fetchCamperDetails.fulfilled, (state, action) => {
-        state.selectedCamper = action.payload;
-        state.isLoading = false;
-      })
-      .addCase(fetchCamperDetails.rejected, (state, action) => {
-        state.error = action.payload || "Failed to load camper details";
-        state.isLoading = false;
-      });
+      .addCase(fetchData.pending, handlePending)
+      .addCase(fetchData.fulfilled, (state, action) =>
+        handleFulfilled(state, action, 'campers')
+      )
+      .addCase(fetchData.rejected, handleRejected)
+      .addCase(fetchCamperDetails.pending, handlePending)
+      .addCase(fetchCamperDetails.fulfilled, (state, action) =>
+        handleFulfilled(state, action, 'selectedCamper')
+      )
+      .addCase(fetchCamperDetails.rejected, handleRejected);
   },
 });
 
