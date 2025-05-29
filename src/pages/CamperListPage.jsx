@@ -1,14 +1,14 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import CardFilter from '../common/components/CardFilter/CardFilter';
-import CardFiltered from '../common/components/CardContent/CardFiltered';
-import { fetchData } from '../store/dataSlice';
-import { scrollTo } from '../utils/scroller';
-import Pagination from '../utils/context';
-import { paginate } from '../utils/pagination';
-import Button from '../common/components/Buttons/Button';
-import ErrorHandle from '../utils/error';
-import EmptyList from '../common/components/UI/EmptyList/EmptyList';
+import CardFilter from '~/common/components/CardFilter/CardFilter';
+import CardFiltered from '~/common/components/CardContent/CardFiltered';
+import { fetchData } from '~/store/dataSlice';
+import { scrollTo } from '~/utils/scroller';
+import Pagination from '~/utils/context';
+import { paginate } from '~/utils/pagination';
+import Button from '~/common/components/Buttons/Button';
+import ErrorHandle from '~/utils/error';
+import EmptyList from '~/common/components/UI/EmptyList/EmptyList';
 import styles from './CatalogPage/index.module.css';
 
 const CamperListPage = ({ filterCondition }) => {

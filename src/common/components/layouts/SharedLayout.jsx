@@ -7,7 +7,7 @@ const SharedLayout = () => {
     <>
       <header className={styles.header}>
         <section className={styles.contentWrapper}>
-           <NavLink to="/">
+          <NavLink to="/">
             <Logo />
           </NavLink>
           <div className={styles.navWrapper}>
@@ -18,9 +18,9 @@ const SharedLayout = () => {
                     to="/"
                     className={({ isActive }) =>
                       isActive
-                    ? `${styles.navList} ${styles.active}`
-                    : styles.navList
-                  }
+                        ? `${styles.navList} ${styles.active}`
+                        : styles.navList
+                    }
                   >
                     Home
                   </NavLink>
@@ -30,9 +30,9 @@ const SharedLayout = () => {
                     to="/catalog"
                     className={({ isActive }) =>
                       isActive
-                    ? `${styles.navList} ${styles.active}`
-                    : styles.navList
-                  }
+                        ? `${styles.navList} ${styles.active}`
+                        : styles.navList
+                    }
                   >
                     Catalog
                   </NavLink>
@@ -42,9 +42,9 @@ const SharedLayout = () => {
                     to="/favorites"
                     className={({ isActive }) =>
                       isActive
-                    ? `${styles.navList} ${styles.active}`
-                    : styles.navList
-                  }
+                        ? `${styles.navList} ${styles.active}`
+                        : styles.navList
+                    }
                   >
                     Favorites
                   </NavLink>
@@ -58,7 +58,7 @@ const SharedLayout = () => {
                 <a
                   href="mailto:info@camperrental.com.ua"
                   className={styles.headerContactsLink}
-                  >
+                >
                   info@camperrental.com.ua
                 </a>
               </li>
@@ -66,7 +66,7 @@ const SharedLayout = () => {
                 <a
                   href="tel:+380637654321"
                   className={styles.headerContactsLink}
-                  >
+                >
                   +380 (63) 765-43-21
                 </a>
               </li>

@@ -1,21 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchCamperDetails, clearSelectedCamper } from '../../store/dataSlice';
-import {
-  getSelectedCamper,
-  getIsLoading,
-  getError,
-} from '../../store/selectors';
-import { Star } from '../../common/components/icons/iconsIndex';
-import { compileVehicleDetails } from '../../common/components/CardDetails/helper';
-import { CardBadgeSelected } from '../../common/components/CardBadge/CardBadgeSelected';
-import { placeholderImages } from '../../utils/placeholder';
-import StarRating from '../../utils/StarRating';
-import Booking from '../../common/components/Booking/Booking';
-import Loader from '../../common/components/UI/Loader/Loader';
-import { FormattedLocation, formatPrice } from '../../utils/FormatLabel';
-import ErrorHandle from '../../utils/error';
+import { fetchCamperDetails, clearSelectedCamper } from '~/store/dataSlice';
+import { getSelectedCamper, getIsLoading, getError } from '~/store/selectors';
+import { Star } from '~/common/components/icons/iconsIndex';
+import { compileVehicleDetails } from '~/common/components/CardDetails/helper';
+import { CardBadgeSelected } from '~/common/components/CardBadge/CardBadgeSelected';
+import { placeholderImages } from '~/utils/placeholder';
+import StarRating from '~/utils/StarRating';
+import Booking from '~/common/components/Booking/Booking';
+import Loader from '~/common/components/UI/Loader/Loader';
+import { FormattedLocation, formatPrice } from '~/utils/FormatLabel';
+import ErrorHandle from '~/utils/error';
 import styles from './index.module.css';
 
 const DetailsPage = () => {

@@ -1,6 +1,6 @@
 import CamperListPage from '../CamperListPage';
 import { useSelector } from 'react-redux';
-import { getFavorites } from '../../store/selectors';
+import { getFavorites } from '~/store/selectors';
 
 const FavoritesPage = () => {
   const favorites = useSelector(getFavorites);

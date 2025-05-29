@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import toast from 'react-hot-toast';
-import { validateForm } from '../../../utils/validator';
-import { Input } from '../UI/Input/Input';
-import { Textarea } from '../UI/Textarea/Textarea';
-import Button from '../Buttons/Button';
+import { validateForm } from '~/utils/validator';
+import { Input } from '~/UI/Input/Input';
+import { Textarea } from '~/UI/Textarea/Textarea';
+import Button from '~/Buttons/Button';
 import styles from './index.module.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';

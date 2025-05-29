@@ -1,10 +1,10 @@
-import PropTypes from "prop-types";
-import { featureIcons } from "../../../utils/filterIcons";
-import { formatValue } from "../../../utils/FormatLabel";
-import styles from "./index.module.css";
+import PropTypes from 'prop-types';
+import { featureIcons } from '~/utils/filterIcons';
+import { formatValue } from '~/utils/FormatLabel';
+import styles from './index.module.css';
 
-   export const CardBadgeSelected = ({ detail }) => {
-  const [key, value] = Array.isArray(detail) ? detail : ["", ""];
+export const CardBadgeSelected = ({ detail }) => {
+  const [key, value] = Array.isArray(detail) ? detail : ['', ''];
 
   const badge = featureIcons.find(({ name }) => name === key);
 
@@ -19,8 +19,8 @@ import styles from "./index.module.css";
   );
 };
 
-  CardBadgeSelected.propTypes = {
-    detail: PropTypes.array.isRequired,
-  };
-  
-  export default CardBadgeSelected;
+CardBadgeSelected.propTypes = {
+  detail: PropTypes.array.isRequired,
+};
+
+export default CardBadgeSelected;

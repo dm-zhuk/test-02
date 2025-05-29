@@ -1,23 +1,23 @@
-import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
-import { CardBadge } from "../CardBadge/CardBadge";
-import { Star } from "../icons/iconsIndex";
-import { FormattedLocation, formatPrice } from "../../../utils/FormatLabel";
-import FavoriteIcon from "../../../utils/FavoriteIcon";
-import Button from "../Buttons/Button";
-import styles from "./index.module.css";
+import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
+import { CardBadge } from '../CardBadge/CardBadge';
+import { Star } from '../icons/iconsIndex';
+import { FormattedLocation, formatPrice } from '~/utils/FormatLabel';
+import FavoriteIcon from '~/utils/FavoriteIcon';
+import Button from '../Buttons/Button';
+import styles from './index.module.css';
 
 const CardContent = ({ item }) => {
   const navigate = useNavigate();
 
-  const handleShowMore = (camperId) => {
+  const handleShowMore = camperId => {
     navigate(`/details/${camperId}`);
   };
 
   return (
     <section key={item.id} className={styles.itemWrapper}>
       <div className={styles.img}>
-        <img src={item.gallery?.[0]?.thumb || ""} alt={item.name || "Camper"} />
+        <img src={item.gallery?.[0]?.thumb || ''} alt={item.name || 'Camper'} />
       </div>
 
       <div className={styles.itemContent}>
@@ -33,7 +33,9 @@ const CardContent = ({ item }) => {
           <div className={styles.itemsSubtitle}>
             <div className={styles.itemSubtitle}>
               <Star />
-              <span>{item.rating} ({item.reviews?.length || 0} Reviews)</span>
+              <span>
+                {item.rating} ({item.reviews?.length || 0} Reviews)
+              </span>
             </div>
             <FormattedLocation location={item.location} />
           </div>

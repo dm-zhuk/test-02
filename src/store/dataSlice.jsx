@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchApi } from '../api/apiService';
+import { fetchApi } from '~/api/apiService';
 import toast from 'react-hot-toast';
 
 const handleFetchError = error => {

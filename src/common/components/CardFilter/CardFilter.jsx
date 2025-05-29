@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 import toast from 'react-hot-toast';
-import Pagination from '../../../utils/context';
+import Pagination from '~/utils/context';
 import Button from '../Buttons/Button';
 import RadioButton from '../Buttons/RadioButton';
 import Checkbox from '../Buttons/Checkbox';
-import { filterData } from '../../../utils/filterData';
-import { getFilterParams } from '../../../utils/filterParams';
-import { vehicleEquipment, vehicleType } from '../../../utils/filterIcons';
+import { filterData } from '~/utils/filterData';
+import { getFilterParams } from '~/utils/filterParams';
+import { vehicleEquipment, vehicleType } from '~/utils/filterIcons';
 import { Location } from '../icons/iconsIndex';
 import styles from './index.module.css';
 

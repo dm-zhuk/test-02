@@ -1,10 +1,10 @@
-import PropTypes from "prop-types";
-import { formatValue } from "../../../utils/FormatLabel";
-import { badgeIcons } from "../../../utils/filterIcons";
-import styles from "./index.module.css";
+import PropTypes from 'prop-types';
+import { formatValue } from '~/utils/FormatLabel';
+import { badgeIcons } from '~/utils/filterIcons';
+import styles from './index.module.css';
 
-  export const CardBadge = ({ detail }) => {
-  const [key, value] = Array.isArray(detail) ? detail : ["", ""];
+export const CardBadge = ({ detail }) => {
+  const [key, value] = Array.isArray(detail) ? detail : ['', ''];
 
   const badge = badgeIcons.find(({ name }) => name === key);
 
