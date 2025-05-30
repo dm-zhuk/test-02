@@ -35,8 +35,7 @@ const CamperListPage = ({ filterCondition }) => {
   }, [campers, filterCondition]);
 
   const resetFilters = () => {
-    setFilteredCampers(campers); // Reset to all campers
-    // Optionally refetch data
+    setFilteredCampers(campers);
     if (campers.length === 0) {
       dispatch(fetchData());
     }
