@@ -1,0 +1,1 @@
+import{f as e,j as r}from"./index-DWKHADjy.js";import{C as i}from"./CamperListPage-YEXqP6FO.js";import{j as a}from"./error-C-2m5-x3.js";const p=()=>{const t=e(a),o=s=>t.includes(s.id);return r.jsx(i,{filterCondition:o})};export{p as default};
