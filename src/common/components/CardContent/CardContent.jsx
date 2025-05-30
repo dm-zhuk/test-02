@@ -11,7 +11,7 @@ const CardContent = ({ item }) => {
   const navigate = useNavigate();
 
   const handleShowMore = camperId => {
-    navigate(`/details/${camperId}`);
+    navigate(`/catalog/${camperId}`);
   };
 
   return (

@@ -1,19 +1,16 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Emptic from '../../img/Emptic.jpg';
-import Loader from '../Loader/Loader';
-import Button from '../../Buttons/Button';
+import Emptic from '~/common/components/img/Emptic.jpg';
+import Loader from '~/common/components/UI/Loader/Loader';
+import Button from '~/common/components/Buttons/Button';
 import styles from './index.module.css';
 
-const EmptyList = () => {
-  const navigate = useNavigate();
+const EmptyList = ({ resetFilters }) => {
   const [loading, setLoading] = useState(false);
 
   const handleClick = () => {
     setLoading(true);
-    setTimeout(() => {
-      navigate('/catalog');
-    }, 250);
+    resetFilters();
+    setTimeout(() => setLoading(false), 250);
   };
 
   return (
@@ -22,16 +19,15 @@ const EmptyList = () => {
         <Loader />
       ) : (
         <>
-          <img className={styles.imageContainer} src={Emptic} alt="Emptic" />
+          <img className={styles.imageContainer} src={Emptic} alt="Empty" />
           <div className={styles.noItemsText}>
             <h2 className={styles.title}>Hard choice?</h2>
             <p className={styles.message}>
-              Keep clicking the hearts to review your favorite campervans later
-              on
+              Keep selecting 💕 to review your favorite campervans later on
             </p>
           </div>
           <Button
-            text="Back to catalog"
+            text="Back to selection"
             onClick={handleClick}
             style={{ padding: '16px 4px' }}
           />

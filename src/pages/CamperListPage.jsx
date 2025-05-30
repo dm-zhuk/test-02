@@ -3,32 +3,44 @@ import { useDispatch, useSelector } from 'react-redux';
 import CardFilter from '~/common/components/CardFilter/CardFilter';
 import CardFiltered from '~/common/components/CardContent/CardFiltered';
 import { fetchData } from '~/store/dataSlice';
+import { getCampers, getIsLoading, getError } from '~/store/selectors';
 import { scrollTo } from '~/utils/scroller';
 import Pagination from '~/utils/context';
 import { paginate } from '~/utils/pagination';
 import Button from '~/common/components/Buttons/Button';
 import ErrorHandle from '~/utils/error';
 import EmptyList from '~/common/components/UI/EmptyList/EmptyList';
+import Loader from '~/common/components/UI/Loader/Loader';
 import styles from './CatalogPage/index.module.css';
 
 const CamperListPage = ({ filterCondition }) => {
   const dispatch = useDispatch();
-  const { campers, error } = useSelector(state => state.data);
+  const { campers } = useSelector(getCampers);
+  const isLoading = useSelector(getIsLoading);
+  const error = useSelector(getError);
   const [filteredCampers, setFilteredCampers] = useState([]);
   const { currentPage, increasePage } = useContext(Pagination);
   const listRef = useRef();
 
   useEffect(() => {
-    if (campers.length === 0) {
+    if (campers.length === 0 && !isLoading) {
       dispatch(fetchData());
     }
-  }, [dispatch, campers]);
+  }, [dispatch, campers, isLoading]);
 
   useEffect(() => {
     if (Array.isArray(campers)) {
       setFilteredCampers(campers.filter(filterCondition));
     }
   }, [campers, filterCondition]);
+
+  const resetFilters = () => {
+    setFilteredCampers(campers); // Reset to all campers
+    // Optionally refetch data
+    if (campers.length === 0) {
+      dispatch(fetchData());
+    }
+  };
 
   const { cards, isBtnVisible } = paginate(currentPage, filteredCampers);
 
@@ -38,6 +50,8 @@ const CamperListPage = ({ filterCondition }) => {
   };
 
   if (error) return <ErrorHandle error={error} />;
+
+  if (isLoading) return <Loader isLoading={true} />;
 
   return (
     <div className={styles.pageContainer}>
@@ -49,7 +63,7 @@ const CamperListPage = ({ filterCondition }) => {
         {filteredCampers.length > 0 ? (
           <CardFiltered data={cards} listRef={listRef} />
         ) : (
-          <EmptyList />
+          <EmptyList resetFilters={resetFilters} />
         )}
       </div>
       {isBtnVisible && (

@@ -29,6 +29,11 @@
   border: none;
   border-radius: 12px;
   background: var(--color-input);
+
+  :focus {
+    outline: none !important;
+    border: 2px solid var(--color-focus);
+  }
 }
 
 .cityInput {
